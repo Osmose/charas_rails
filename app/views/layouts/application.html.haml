@@ -1,0 +1,10 @@
+!!! XML
+!!!
+%html
+    %head
+        %title Charas-Project
+        = stylesheet_link_tag :all
+        = csrf_meta_tag
+    %body
+        = yield
+        = javascript_include_tag :defaults
