@@ -1,25 +1,20 @@
 = main_box("Search") do
-    = form_tag(resources_path, :method => "get", :class => "form") do
-        .columns.wat-cf
-            .column.left
-                = label_tag :query, "Query", :class => "label"
-                = text_field_tag :query, nil, :class => "text_field"
-            .column.right
-                    
+  = render "search_form"
+
 = main_box("Recent Resources") do
-    %ul.resourceList
-        = render :partial => "res_list_item", :collection => @resources
-    .clear
-    = will_paginate @resources
-    
+  %ul.resourceList
+    = render :partial => "res_list_item", :collection => @resources
+  .clear
+  = will_paginate @resources
+
 = content_for :sidebar do
-    - if user_signed_in?
-        - if current_user.is_admin?
-            .block
-                %h3 Admin
-                %ul.navigation
-                    %li= link_to("Manage Categories", categories_path)
-        .block
-            %h3 My Resources
-            %ul.navigation
-                %li= link_to("Upload New Resource", new_resource_path)
+  - if user_signed_in?
+    - if current_user.is_admin?
+      .block
+        %h3 Admin
+        %ul.navigation
+          %li= link_to("Manage Categories", categories_path)
+    .block
+      %h3 My Resources
+      %ul.navigation
+        %li= link_to("Upload New Resource", new_resource_path)

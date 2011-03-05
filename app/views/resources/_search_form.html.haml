@@ -1,0 +1,6 @@
+= form_tag(resource_search_path, :method => "get", :class => "form") do
+  .group.wat-cf
+    = label_tag :query, "Query", :class => "label"
+    = text_field_tag :query, params[:query], :class => "text_field"
+  .group.navform.wat-cf
+    = submit_button("#{image_tag("magnifier.png")} Search")

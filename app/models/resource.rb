@@ -11,6 +11,10 @@ class Resource < ActiveRecord::Base
         !(res_content_type =~ /^image.*/).nil?
     end
     
+    # Search options
+    scoped_search :on => [:name, :description]
+    
+    # Pagination
     cattr_reader :per_page
     @@per_page = 20
 end

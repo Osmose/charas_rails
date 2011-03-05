@@ -1,4 +1,4 @@
-1299300536
+1299302197
 AddDescriptionToResources	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305035007_add_description_to_resources.rb	class AddDescriptionToResources 
 AddResColumnsToResource	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305023522_add_res_columns_to_resource.rb	class AddResColumnsToResource 
 Application	C:/Users/Osmose/Desktop/vagrant/shared/charas/config/application.rb	  class Application 
@@ -57,6 +57,7 @@ new	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_con
 new	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def new
 per_page	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/models/resource.rb	    cattr_reader :per_page
 requiredValuesMissing	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/rails.js	function requiredValuesMissing(form)
+search	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def search
 show	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def show
 show	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def show
 sub_layout	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/application_controller.rb	  def sub_layout

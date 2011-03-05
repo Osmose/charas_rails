@@ -1,7 +1,11 @@
 Charas::Application.routes.draw do
   devise_for :users
   
+  # Resources
+  match "resources/search" => "resources#search", :as => :resource_search
   resources :resources
+  
+  # Categories
   resources :categories
   
   root :to => "home#index"

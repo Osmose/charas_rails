@@ -13,6 +13,18 @@ class ResourcesController < ApplicationController
         end
     end
     
+    def search
+      @resources = Resource.search_for(params[:query]).paginate(
+        :page => params[:page],
+        :order => "created_at DESC"
+      )
+        
+      respond_to do |format|
+        format.html
+        format.xml {render :xml => @resources}
+      end
+    end
+    
     def show
         @resource = Resource.find(params[:id])
         
