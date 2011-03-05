@@ -41,3 +41,4 @@ gem "will_paginate", "~> 3.0.pre2"
 gem 'formtastic'
 gem "paperclip", "~> 2.3"
 gem "scoped_search"
+gem "aws-s3"

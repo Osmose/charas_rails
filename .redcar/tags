@@ -1,4 +1,4 @@
-1299302197
+1299305944
 AddDescriptionToResources	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305035007_add_description_to_resources.rb	class AddDescriptionToResources 
 AddResColumnsToResource	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305023522_add_res_columns_to_resource.rb	class AddResColumnsToResource 
 Application	C:/Users/Osmose/Desktop/vagrant/shared/charas/config/application.rb	  class Application 
