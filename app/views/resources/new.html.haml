@@ -1,0 +1,18 @@
+.block
+    %h2 Upload New Resource
+    .content
+        .flash
+            - if !alert.nil?
+                .message.alert= alert
+            - if !notice.nil?
+                .message.notice= notice
+        = form_for @resource, :html => {:multipart => true} do |f|
+            .group.wat-cf
+                = f.label :file, :class => "label"
+                = f.file_field :file
+            .group.wat-cf
+                = f.label :name, :class => "label"
+                = f.text_field :name, :class => "text_field"
+            .group.wat-cf
+                = f.label :category_id, :class => "label"
+                = f.select :category_id, options_from_collection_for_select(Category.all, :id, :name)

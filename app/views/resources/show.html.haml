@@ -1,0 +1,12 @@
+.block
+    .content
+        %h2.title= @resource.name
+        .inner
+            image_tag(@resource.path, :class => :resource)
+            %ul.list
+                %li
+                    .left Author
+                    .item= @resource.user.name
+                %li
+                    .left Category
+                    .item= @resource.category.name

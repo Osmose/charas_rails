@@ -40,6 +40,10 @@ GEM
       json
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    formtastic (1.2.3)
+      actionpack (>= 2.3.7)
+      activesupport (>= 2.3.7)
+      i18n (~> 0.4)
     haml (3.0.25)
     hpricot (0.8.4)
     i18n (0.4.2)
@@ -91,6 +95,7 @@ DEPENDENCIES
   BlueCloth
   devise
   disqus
+  formtastic
   haml
   hpricot
   rails (= 3.0.0)

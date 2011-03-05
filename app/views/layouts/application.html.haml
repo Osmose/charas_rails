@@ -11,21 +11,13 @@
             #user-navigation
                 %ul.wat-cf
                     - if user_signed_in?
+                        %li= link_to(current_user.name, :action => "edit", :controller => "devise/registrations")
                         %li= link_to("Logout", destroy_user_session_path)
                     - else
                         %li= link_to("Register", new_user_registration_path)
                         %li= link_to("Login", new_user_session_path)
             #main-navigation
-                %ul.wat-cf
-                    %li.first.active= link_to("News", root_path)
+                = render "layouts/navigation"
         #wrapper.wat-cf
-            #main
-                #block-welcomeText.block
-                    .content
-                        %h2.title= yield :title
-                        .inner
-                            .message.alert= alert
-                            .message.notice= notice
-                            = yield
-            #sidebar
+            = render "layouts/#{controller.sub_layout}"
         = javascript_include_tag :defaults

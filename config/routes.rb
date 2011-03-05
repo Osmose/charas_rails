@@ -1,6 +1,9 @@
 Charas::Application.routes.draw do
   devise_for :users
   
+  resources :resources
+  resources :categories
+  
   root :to => "home#index"
 
   # The priority is based upon order of creation:

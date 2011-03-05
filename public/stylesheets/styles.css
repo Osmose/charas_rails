@@ -270,12 +270,18 @@ input.checkbox {
   margin-bottom: 15px; }
 
 .form div.left {
-  width: 20%;
   float: left; }
 
 .form div.right {
-  width: 75%;
   float: right; }
+
+.form div.leftSingleLine {
+  float: left;
+  width: 20%; }
+
+.form div.rightSingleLine {
+  float: right;
+  width: 75%; }
 
 .form .columns .column {
   width: 48%; }
@@ -737,3 +743,10 @@ ul.list li .left {
   color: #FFF;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px; }
+
+.alignRight {
+  text-align: right; }
+
+img.resource {
+  display: block;
+  margin: 15px auto; }

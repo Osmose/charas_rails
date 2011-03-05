@@ -1,14 +1,13 @@
-- content_for :title do
-    News
-%ul.list
-    %li
-        .left= image_tag("avatar.png")
-        .item
-            %h3 Sample News Post
-            %p This is a sample news post. As new news is posted, it would appear on the front page along with the avatar of the user posting it. 
-            %p A user group would be created for users who can post to the front page news. In addition, normal users could write up news posts and have them approved by someone in the news group, for things like an update about a game or a contest or whatever.
-    %li
-        .left= image_tag("avatar.png")
-        .item
-            %h3 Another News Post
-            %p This is another sample news post. It's mostly just to fill space.
+= render :layout => "shared/block", :locals => {:title => "News"} do
+    %ul.list
+        %li
+            .left= image_tag("avatar.png")
+            .item
+                %h3 Sample News Post
+                %p This is a sample news post. As new news is posted, it would appear on the front page along with the avatar of the user posting it. 
+                %p A user group would be created for users who can post to the front page news. In addition, normal users could write up news posts and have them approved by someone in the news group, for things like an update about a game or a contest or whatever.
+        %li
+            .left= image_tag("avatar.png")
+            .item
+                %h3 Another News Post
+                %p This is another sample news post. It's mostly just to fill space.

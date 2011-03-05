@@ -237,13 +237,21 @@ input.checkbox {
 }
 
 .form div.left {
-  width: 20%;
   float: left;
 }
 
 .form div.right {
-  width: 75%;
   float: right;
+}
+
+.form div.leftSingleLine {
+    float: left;
+    width: 20%;
+}
+
+.form div.rightSingleLine {
+    float: right;
+    width: 75%;
 }
 
 .form .columns .column {

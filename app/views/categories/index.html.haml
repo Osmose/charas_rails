@@ -1,0 +1,11 @@
+= main_box("Categories") do
+    %table.table
+        %tr
+            %th Name
+            %th &nbsp;
+        = render :partial => "row", :collection => @categories
+    .actions-bar.wat-cf
+        .actions
+            = link_to("#{image_tag("new.png")} New", new_category_path, :class => "button")
+        .pagination
+            = will_paginate @resources
