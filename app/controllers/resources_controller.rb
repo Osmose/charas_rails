@@ -74,7 +74,7 @@ class ResourcesController < ApplicationController
     end
     
     def sub_layout
-        if controller.action_name == "new" || controller.action_name == "edit"
+        if action_name == "new" || action_name == "edit"
             "box"
         else
             "mainSidebar"

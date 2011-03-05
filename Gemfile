@@ -39,3 +39,4 @@ gem "BlueCloth"
 gem "will_paginate", "~> 3.0.pre2"
 
 gem 'formtastic'
+gem "paperclip", "~> 2.3"

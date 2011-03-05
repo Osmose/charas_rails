@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-    before_filter :authenticate_user!, :except => [:index, :show]
+    before_filter :authenticate_user!
+    before_filter :check_admin
     
     def index
         @categories = Category.paginate(
@@ -36,7 +37,6 @@ class CategoriesController < ApplicationController
     
     def create
         @category = Category.new(params[:category])
-        @category.user = current_user
 
         if @category.save
             redirect_to(@category, :notice => 'Category was successfully created.')
@@ -63,7 +63,7 @@ class CategoriesController < ApplicationController
     end
     
     def sub_layout
-        if controller.action_name == "new" || controller.action_name == "edit"
+        if action_name == "new" || action_name == "edit"
             "box"
         else
             "mainSidebar"

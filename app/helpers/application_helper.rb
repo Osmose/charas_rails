@@ -8,4 +8,10 @@ module ApplicationHelper
         render(:layout => "shared/block", :locals => {:title => title}, &block)
     end
     
+    def submit_button(text)
+        content_tag(:button, :type => :submit, :class => "button") do
+            text
+        end
+    end
+    
 end

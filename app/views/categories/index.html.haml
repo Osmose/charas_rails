@@ -6,6 +6,6 @@
         = render :partial => "row", :collection => @categories
     .actions-bar.wat-cf
         .actions
-            = link_to("#{image_tag("new.png")} New", new_category_path, :class => "button")
+            = link_to(image_tag("add.png") + " New", new_category_path, :class => "button")
         .pagination
             = will_paginate @resources

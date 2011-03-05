@@ -335,12 +335,17 @@ ul.list li {
 ul.list li .left {
   float: left; }
 
+ul.list li .left.label {
+  font-size: 1.2em;
+  font-weight: bold; }
+
 ul.list li .left .avatar {
   width: 50px;
   height: 50px; }
 
 ul.list li .item {
-  margin-left: 80px; }
+  margin-left: 80px;
+  padding: 5px; }
 
 ul.list li .item .avatar {
   float: left;
@@ -743,6 +748,18 @@ ul.list li .left {
   color: #FFF;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px; }
+
+form.formtastic fieldset > ol > li label {
+  font-weight: bold;
+  font-size: 1.2em; }
+
+form.formtastic fieldset > ol > li.string input {
+  border-color: #cccccc #dddddd #dddddd #cccccc;
+  border-right: 1px solid #dddddd;
+  border-style: solid;
+  border-width: 2px 1px 1px 2px;
+  font-size: 1.2em;
+  padding: 1px 0; }
 
 .alignRight {
   text-align: right; }
