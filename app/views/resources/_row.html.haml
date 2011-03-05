@@ -1,5 +1,6 @@
 %tr
-    %td= row.name
+    %td= image_tag(row.res.url(:small))
+    %td= link_to(row.name, row)
     %td= row.user.name
     %td= row.category.name
     %td

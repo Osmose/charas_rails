@@ -7,14 +7,9 @@
             .column.right
                     
 = main_box("Recent Resources") do
-    %table.table
-        %tr
-            %th Name
-            %th Author
-            %th Category
-            %th.last &nbsp;
-        = render :partial => "row", :collection => @resources
-    
+    %ul.resourceList
+        = render :partial => "res_list_item", :collection => @resources
+    .clear
     = will_paginate @resources
     
 = content_for :sidebar do

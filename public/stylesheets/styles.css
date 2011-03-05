@@ -753,7 +753,8 @@ form.formtastic fieldset > ol > li label {
   font-weight: bold;
   font-size: 1.2em; }
 
-form.formtastic fieldset > ol > li.string input {
+form.formtastic fieldset > ol > li.string input,
+form.formtastic fieldset > ol > li.text textarea {
   border-color: #cccccc #dddddd #dddddd #cccccc;
   border-right: 1px solid #dddddd;
   border-style: solid;
@@ -763,6 +764,15 @@ form.formtastic fieldset > ol > li.string input {
 
 .alignRight {
   text-align: right; }
+
+ul.resourceList li {
+  background-color: #eeeeee;
+  border: 1px solid #bfbfbf;
+  float: left;
+  height: 100px;
+  margin: 5px;
+  padding: 5px;
+  width: 100px; }
 
 img.resource {
   display: block;

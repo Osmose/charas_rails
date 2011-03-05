@@ -2,11 +2,11 @@
     .content
         %h2.title= @resource.name
         .inner
-            image_tag(@resource.path, :class => :resource)
+            = image_tag(@resource.res.url, :class => :resource)
             %ul.list
                 %li
-                    .left Author
+                    .left.label Author
                     .item= @resource.user.name
                 %li
-                    .left Category
+                    .left.label Category
                     .item= @resource.category.name

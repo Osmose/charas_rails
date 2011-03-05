@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302065530) do
+ActiveRecord::Schema.define(:version => 20110305035007) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,11 +20,15 @@ ActiveRecord::Schema.define(:version => 20110302065530) do
 
   create_table "resources", :force => true do |t|
     t.string   "name"
-    t.string   "href"
     t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "res_file_name"
+    t.string   "res_content_type"
+    t.integer  "res_file_size"
+    t.datetime "res_updated_at"
+    t.text     "description"
   end
 
   create_table "users", :force => true do |t|
