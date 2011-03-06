@@ -8,6 +8,9 @@ Charas::Application.routes.draw do
   # Categories
   resources :categories
   
+  # Games
+  resources :games
+  
   root :to => "home#index"
 
   # The priority is based upon order of creation:

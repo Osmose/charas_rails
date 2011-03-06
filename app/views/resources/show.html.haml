@@ -1,12 +1,14 @@
-.block
-    .content
-        %h2.title= @resource.name
-        .inner
-            = image_tag(@resource.res.url, :class => :resource)
-            %ul.list
-                %li
-                    .left.label Author
-                    .item= @resource.user.name
-                %li
-                    .left.label Category
-                    .item= @resource.category.name
+= main_box(@resource.name) do
+  = image_tag(@resource.res.url, :class => :resource)
+  %ul.list
+    %li
+      .left.label Author
+      .item= @resource.user.name
+    %li
+      .left.label Category
+      .item= @resource.category.name
+    %li
+      .left.label Description
+      .item
+        :markdown
+          #{@resource.description}

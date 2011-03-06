@@ -74,23 +74,23 @@ table {
 
 /* End hide from IE-mac */
 h1 {
-  margin: 15px 0;
+  margin: 0 0 15px;
   font-size: 22px;
   font-weight: normal; }
 
 h2 {
   font-size: 22px;
-  margin: 15px 0;
+  margin: 0 0 15px;
   font-weight: normal; }
 
 h3 {
   font-size: 18px;
-  margin: 10px 0;
+  margin: 0 0 10px;
   font-weight: normal; }
 
 h4 {
   font-size: 16px;
-  margin: 10px 0;
+  margin: 0 0 10px;
   font-weight: normal; }
 
 hr {
@@ -98,7 +98,7 @@ hr {
   border: 0; }
 
 p {
-  margin: 15px 0; }
+  margin: 0 0 15px; }
 
 a img {
   border: none; }
@@ -329,7 +329,6 @@ ul.list {
   list-style-type: none; }
 
 ul.list li {
-  clear: left;
   padding-bottom: 5px; }
 
 ul.list li .left {
@@ -344,7 +343,7 @@ ul.list li .left .avatar {
   height: 50px; }
 
 ul.list li .item {
-  margin-left: 80px;
+  margin-left: 90px;
   padding: 5px; }
 
 ul.list li .item .avatar {
@@ -765,6 +764,9 @@ form.formtastic fieldset > ol > li.text textarea {
 .alignRight {
   text-align: right; }
 
+div.line {
+  border-top: 1px solid #bfbfbf; }
+
 ul.resourceList li {
   background-color: #eeeeee;
   border: 1px solid #bfbfbf;
@@ -777,3 +779,18 @@ ul.resourceList li {
 img.resource {
   display: block;
   margin: 15px auto; }
+
+ul.gameList > li {
+  height: 113px;
+  padding: 5px; }
+  ul.gameList > li div.logo {
+    float: left;
+    margin-left: 5px; }
+  ul.gameList > li div.desc {
+    margin-left: 160px; }
+
+.gameInfo .logo {
+  float: right;
+  height: 113px;
+  margin: 5px;
+  width: 150px; }

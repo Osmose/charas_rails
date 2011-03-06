@@ -16,12 +16,12 @@
 .wat-cf {display: block;}
 /* End hide from IE-mac */
 
-h1 { margin: 15px 0; font-size: 22px; font-weight: normal; }
-h2 { font-size: 22px; margin: 15px 0; font-weight: normal;}
-h3 { font-size: 18px; margin: 10px 0; font-weight: normal;}
-h4 { font-size: 16px; margin: 10px 0; font-weight: normal;}
+h1 { margin: 0 0 15px; font-size: 22px; font-weight: normal; }
+h2 { font-size: 22px; margin: 0 0 15px; font-weight: normal;}
+h3 { font-size: 18px; margin: 0 0 10px; font-weight: normal;}
+h4 { font-size: 16px; margin: 0 0 10px; font-weight: normal;}
 hr {height: 1px; border: 0; }
-p { margin: 15px 0;}
+p { margin: 0 0 15px;}
 a img { border: none; }
 
 body {
@@ -313,7 +313,6 @@ ul.list {
 }
 
 ul.list li {
-  clear: left;
   padding-bottom: 5px;
 }
 
@@ -334,7 +333,7 @@ ul.list li .left .avatar {
 }
 
 ul.list li .item {
-  margin-left: 80px;
+  margin-left: 90px;
   padding: 5px;
 }
 

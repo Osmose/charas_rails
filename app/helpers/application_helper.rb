@@ -4,8 +4,8 @@ module ApplicationHelper
         content_tag(:button, *args, &block)
     end
 
-    def main_box(title, &block)
-        render(:layout => "shared/block", :locals => {:title => title}, &block)
+    def main_box(title, bclass = false, &block)
+        render(:layout => "shared/block", :locals => {:title => title, :bclass => bclass}, &block)
     end
     
     def submit_button(text)

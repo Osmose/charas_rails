@@ -10,12 +10,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110305035007) do
+ActiveRecord::Schema.define(:version => 20110305233657) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "game_meta_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "game_metas", :force => true do |t|
+    t.string   "value"
+    t.integer  "game_id"
+    t.integer  "game_meta_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "resources", :force => true do |t|
@@ -29,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20110305035007) do
     t.integer  "res_file_size"
     t.datetime "res_updated_at"
     t.text     "description"
+    t.integer  "game_id"
+    t.boolean  "hidden",           :default => false
   end
 
   create_table "users", :force => true do |t|

@@ -1,5 +1,8 @@
-1299305944
+1299363626
+AddDescriptionToGames	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305221824_add_description_to_games.rb	class AddDescriptionToGames 
 AddDescriptionToResources	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305035007_add_description_to_resources.rb	class AddDescriptionToResources 
+AddGameToResources	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203814_add_game_to_resources.rb	class AddGameToResources 
+AddHiddenToResources	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305204450_add_hidden_to_resources.rb	class AddHiddenToResources 
 AddResColumnsToResource	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305023522_add_res_columns_to_resource.rb	class AddResColumnsToResource 
 Application	C:/Users/Osmose/Desktop/vagrant/shared/charas/config/application.rb	  class Application 
 ApplicationController	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/application_controller.rb	class ApplicationController 
@@ -13,8 +16,21 @@ Category	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/models/category.rb	cl
 CategoryTest	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/unit/category_test.rb	class CategoryTest 
 Charas	C:/Users/Osmose/Desktop/vagrant/shared/charas/config/application.rb	module Charas
 CreateCategories	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302065530_create_categories.rb	class CreateCategories 
+CreateGameMetaTypes	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203511_create_game_meta_types.rb	class CreateGameMetaTypes 
+CreateGameMetas	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203220_create_game_metas.rb	class CreateGameMetas 
+CreateGames	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203017_create_games.rb	class CreateGames 
 CreateResources	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302062940_create_resources.rb	class CreateResources 
 DeviseCreateUsers	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302062423_devise_create_users.rb	class DeviseCreateUsers 
+Game	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/models/game.rb	class Game 
+GameMeta	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/models/game_meta.rb	class GameMeta 
+GameMetaTest	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/unit/game_meta_test.rb	class GameMetaTest 
+GameMetaType	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/models/game_meta_type.rb	class GameMetaType 
+GameMetaTypeTest	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/unit/game_meta_type_test.rb	class GameMetaTypeTest 
+GameTest	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/unit/game_test.rb	class GameTest 
+GamesController	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	class GamesController 
+GamesControllerTest	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/functional/games_controller_test.rb	class GamesControllerTest 
+GamesHelper	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/helpers/games_helper.rb	module GamesHelper
+GamesHelperTest	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/unit/helpers/games_helper_test.rb	class GamesHelperTest 
 HomeController	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/home_controller.rb	class HomeController 
 HomeControllerTest	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/functional/home_controller_test.rb	class HomeControllerTest 
 HomeHelper	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/helpers/home_helper.rb	module HomeHelper
@@ -32,8 +48,10 @@ allowAction	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/rai
 button_tag	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/helpers/application_helper.rb	    def button_tag(*args, &block)
 check_admin	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/application_controller.rb	  def check_admin
 create	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def create
+create	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def create
 create	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def create
 destroy	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def destroy
+destroy	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def destroy
 destroy	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def destroy
 disableFormElements	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/rails.js	function disableFormElements(form)
 down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302062423_devise_create_users.rb	  def self.down
@@ -41,8 +59,15 @@ down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302062940_cre
 down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302065530_create_categories.rb	  def self.down
 down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305023522_add_res_columns_to_resource.rb	    def self.down
 down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305035007_add_description_to_resources.rb	  def self.down
+down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203017_create_games.rb	  def self.down
+down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203220_create_game_metas.rb	  def self.down
+down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203511_create_game_meta_types.rb	  def self.down
+down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203814_add_game_to_resources.rb	  def self.down
+down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305204450_add_hidden_to_resources.rb	  def self.down
+down	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305221824_add_description_to_games.rb	  def self.down
 download	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def download
 edit	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def edit
+edit	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def edit
 edit	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def edit
 enableFormElements	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/rails.js	function enableFormElements(form)
 fire	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/rails.js	function fire(obj, name, data)
@@ -50,18 +75,22 @@ handleMethod	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/ra
 handleRemote	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/rails.js	function handleRemote(element)
 image?	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/models/resource.rb	    def image?
 index	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def index
+index	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def index
 index	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/home_controller.rb	    def index
 index	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def index
 main_box	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/helpers/application_helper.rb	    def main_box(title, &block)
 new	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def new
+new	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def new
 new	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def new
 per_page	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/models/resource.rb	    cattr_reader :per_page
 requiredValuesMissing	C:/Users/Osmose/Desktop/vagrant/shared/charas/public/javascripts/rails.js	function requiredValuesMissing(form)
 search	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def search
 show	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def show
+show	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def show
 show	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def show
 sub_layout	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/application_controller.rb	  def sub_layout
 sub_layout	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def sub_layout
+sub_layout	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def sub_layout
 sub_layout	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def sub_layout
 submit_button	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/helpers/application_helper.rb	    def submit_button(text)
 test_homepage	C:/Users/Osmose/Desktop/vagrant/shared/charas/test/performance/browsing_test.rb	  def test_homepage
@@ -70,5 +99,12 @@ up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302062940_creat
 up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110302065530_create_categories.rb	  def self.up
 up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305023522_add_res_columns_to_resource.rb	    def self.up
 up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305035007_add_description_to_resources.rb	  def self.up
+up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203017_create_games.rb	  def self.up
+up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203220_create_game_metas.rb	  def self.up
+up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203511_create_game_meta_types.rb	  def self.up
+up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305203814_add_game_to_resources.rb	  def self.up
+up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305204450_add_hidden_to_resources.rb	  def self.up
+up	C:/Users/Osmose/Desktop/vagrant/shared/charas/db/migrate/20110305221824_add_description_to_games.rb	  def self.up
 update	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/categories_controller.rb	    def update
+update	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/games_controller.rb	  def update
 update	C:/Users/Osmose/Desktop/vagrant/shared/charas/app/controllers/resources_controller.rb	    def update

@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-    before_filter :authenticate_user!, :except => [:index, :show, :download]
+    before_filter :authenticate_user!, :except => [:index, :show, :search, :download]
     
     def index
         @resources = Resource.paginate(

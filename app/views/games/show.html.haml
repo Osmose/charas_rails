@@ -1,0 +1,19 @@
+= main_box(@game.name, "gameInfo") do
+  .logo= image_tag(@game.logo.url(:small))
+  %ul.list
+    %li
+      .left.label Author
+      .item= @game.user.name
+    %li
+      .left.label Description
+      .item
+        :markdown
+          #{@game.description}
+  .clear
+
+= content_for :sidebar do
+  - if @game.user == current_user
+    .block
+      %h3 Manage Game
+      %ul.navigation
+        %li= link_to("Edit Game Info", edit_game_path(@game))
