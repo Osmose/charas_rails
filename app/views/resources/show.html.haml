@@ -1,5 +1,7 @@
 = main_box(@resource.name) do
   = image_tag(@resource.res.url, :class => :resource)
+  .navform.wat-cf
+    = favorite_button(@resource)
   %ul.list
     %li
       .left.label Author
@@ -12,3 +14,6 @@
       .item
         :markdown
           #{@resource.description}
+
+= content_for :sidebar do
+  = render "resources_sidebar"

@@ -1,27 +1,12 @@
-#block-signup.block
-    %h2 Sign Up
-    .content
-        .flash
-            - if !alert.nil?
-                .message.alert= alert
-            - if !notice.nil?
-                .message.notice= notice
-        = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form"}) do |f|
-            .group.wat-cf
-                = f.label :email, :class => "label"
-                = f.text_field :email, :class => "text_field"
-            .group.wat-cf
-                = f.label :name, :class => "label"
-                = f.text_field :name, :class => "text_field"
-            .group.wat-cf
-                = f.label :password, :class => "label"
-                = f.password_field :password, :class => "text_field"
-            .group.wat-cf
-                = f.label :password_confirmation, :class => "label"
-                = f.password_field :password_confirmation, :class => "text_field"
-            .group.columns.wat-cf
-                .left
-                    = button_tag :type => :submit, :class => "button" do
-                        #{image_tag("tick.png")} Sign Up
-                .right.alignRight
-                    = render :partial => "devise/shared/links"
+= small_box("Sign Up") do
+  - semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    - f.inputs do
+      = f.input :email
+      = f.input :name
+      = f.input :password
+      = f.input :password_confirmation
+    - f.buttons do
+      .columns
+        .left.column= submit_button("#{image_tag("tick.png")} Sign Up")
+        .right.column.alignRight= render :partial => "devise/shared/links"

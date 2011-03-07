@@ -1,7 +1,8 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
     before_filter :authenticate_user!
     before_filter :check_admin
-    
+    current_section :admin
+
     def index
         @categories = Category.paginate(
             :page => params[:page],
@@ -23,7 +24,7 @@ class CategoriesController < ApplicationController
               format.xml  { render :xml => @category }
             end
         else
-            redirect_to(categories_path, :error => "Category not found")
+            redirect_to(admin_categories_path, :error => "Category not found")
         end
     end
     
@@ -39,9 +40,9 @@ class CategoriesController < ApplicationController
         @category = Category.new(params[:category])
 
         if @category.save
-            redirect_to(@category, :notice => 'Category was successfully created.')
+            redirect_to(admin_categories_path, :notice => 'Category was successfully created.')
         else
-            redirect_to :back, :error => "Error saving category."
+             render :action => "new", :error => "Error saving category."
         end
     end
     
@@ -49,7 +50,7 @@ class CategoriesController < ApplicationController
         @category = Category.find(params[:id])
 
         if @category.update_attributes(params[:category])
-            redirect_to(@category, :notice => 'Category was successfully updated.')
+            redirect_to(admin_categories_path, :notice => 'Category was successfully updated.')
         else
             render :action => "edit", :error => "Error editing category"
         end
@@ -63,7 +64,7 @@ class CategoriesController < ApplicationController
     end
     
     def sub_layout
-        if action_name == "new" || action_name == "edit"
+        if ["new", "edit", "update", "create"].include?(action_name)
             "box"
         else
             "mainSidebar"

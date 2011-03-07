@@ -1,0 +1,4 @@
+- if ResourceFavorite.is_favorite?(current_user.id, resource.id)
+  = link_to(image_tag("delete.png") + " Unfavorite", resource_unfavorite_path(resource.id), :class => "button")
+- else
+  = link_to(image_tag("add.png") + " Favorite", resource_favorite_path(resource.id), :class => "button")

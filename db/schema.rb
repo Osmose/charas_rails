@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110305233657) do
+ActiveRecord::Schema.define(:version => 20110307064107) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "hidden"
   end
 
   create_table "game_meta_types", :force => true do |t|
@@ -45,6 +46,28 @@ ActiveRecord::Schema.define(:version => 20110305233657) do
     t.datetime "logo_updated_at"
   end
 
+  create_table "group_memberships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.integer  "real_id",     :default => 0
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "resource_favorites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "resource_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "resources", :force => true do |t|
     t.string   "name"
     t.integer  "category_id"
@@ -61,9 +84,9 @@ ActiveRecord::Schema.define(:version => 20110305233657) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "",    :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "",    :null => false
-    t.string   "password_salt",                       :default => "",    :null => false
+    t.string   "email",                               :default => "", :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -73,7 +96,6 @@ ActiveRecord::Schema.define(:version => 20110305233657) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.boolean  "is_admin",                            :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

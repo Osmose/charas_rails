@@ -1,0 +1,9 @@
+- if user_signed_in?
+  .block
+    %h3 My Resources
+    %ul.navigation
+      %li= link_to("Upload New Resource", new_resource_path)
+.block
+  %h3 Categories
+  %ul.navigation
+    = render :partial => "category_link", :collection => @sidebar_categories

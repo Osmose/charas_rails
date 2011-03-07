@@ -1,4 +1,4 @@
-- semantic_form_for @category do |f|
+- semantic_form_for [:admin, @category] do |f|
     = f.inputs
     - f.buttons do
         = submit_button("#{image_tag("tick.png")} Submit")

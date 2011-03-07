@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
+  current_section :news
 
-    def index
-    end
+  def index
+  end
 
 end

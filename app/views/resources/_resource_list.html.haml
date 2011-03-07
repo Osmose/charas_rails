@@ -1,0 +1,8 @@
+= main_box(title) do
+  - if !resources.empty?
+    %ul.resourceList
+      = render :partial => "res_list_item", :collection => resources
+    .clear
+    = will_paginate resources
+  - else
+    %p No resources found.

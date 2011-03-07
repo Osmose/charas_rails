@@ -3,11 +3,18 @@ Charas::Application.routes.draw do
   
   # Resources
   match "resources/search" => "resources#search", :as => :resource_search
+  match "resources/favorite/:id" => "resources#favorite", :as => :resource_favorite
+  match "resources/unfavorite/:id" => "resources#unfavorite", :as => :resource_unfavorite
+  match "resources/category/:id" => "resources#category", :as => :resource_category
   resources :resources
   
-  # Categories
-  resources :categories
-  
+  # Admin areas
+  namespace "admin" do
+    root :to => "home#index"
+    resources :categories
+    resources :users
+  end
+
   # Games
   resources :games
   

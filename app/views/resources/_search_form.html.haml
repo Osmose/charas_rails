@@ -1,6 +1,8 @@
-= form_tag(resource_search_path, :method => "get", :class => "form") do
-  .group.wat-cf
-    = label_tag :query, "Query", :class => "label"
-    = text_field_tag :query, params[:query], :class => "text_field"
-  .group.navform.wat-cf
+- semantic_form_for @search, :url => resource_search_path, :html => { :method => :get, :class => "res_search" }  do |f|
+  - f.inputs "Basic" do
+    = f.input :query
+  - f.inputs "Advanced" do
+    = f.input :category_id, :as => :select, :collection => Category.visible
+  .clear
+  - f.buttons do
     = submit_button("#{image_tag("magnifier.png")} Search")

@@ -1,25 +1,11 @@
-#block-login.block
-    %h2 Login
-    .content
-        .flash
-            - if !alert.nil?
-                .message.alert= alert
-            - if !notice.nil?
-                .message.notice= notice
-        = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form"}) do |f|
-            .group.wat-cf
-                = f.label :email, :class => "label"
-                = f.text_field :email, :class => "text_field"
-            .group.wat-cf
-                = f.label :password, :class => "label"
-                = f.password_field :password, :class => "text_field"
-            - if devise_mapping.rememberable?
-                .group.wat-cf
-                    = f.check_box :remember_me, :class => "checkbox"
-                    = f.label :remember_me, :class => "checkbox"
-            .group.wat-cf
-                .left
-                    = button_tag :type => :submit, :class => "button" do
-                        #{image_tag("key.png")} Log In
-                .right.alignRight
-                    = render :partial => "devise/shared/links"
+= small_box("Login ") do
+  - semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    = devise_error_messages!
+    - f.inputs do
+      = f.input :email
+      = f.input :password
+      = f.input :remember_me, :as => :boolean
+    - f.buttons do
+      .columns
+        .left.column= submit_button("#{image_tag("key.png")} Log In")
+        .right.column.alignRight= render :partial => "devise/shared/links"

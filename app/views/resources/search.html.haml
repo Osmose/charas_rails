@@ -1,11 +1,7 @@
 = main_box("Search") do
   = render "search_form"
 
-= main_box("Search Results") do
-  - if !@resources.empty?
-    %ul.resourceList
-      = render :partial => "res_list_item", :collection => @resources
-    .clear
-    = will_paginate @resources
-  - else
-    %p No resources found.
+= resource_list("Search Results", @resources)
+
+= content_for :sidebar do
+  = render "resources_sidebar"

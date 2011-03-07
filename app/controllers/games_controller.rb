@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]  
-  
+  current_section :games
+
   def index
     @games = Game.paginate(
       :page => params[:page],

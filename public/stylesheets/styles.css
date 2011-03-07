@@ -283,13 +283,13 @@ input.checkbox {
   float: right;
   width: 75%; }
 
-.form .columns .column {
+.columns .column {
   width: 48%; }
 
-.form .columns .left {
+.columns .left {
   float: left; }
 
-.form .columns .right {
+.columns .right {
   float: right; }
 
 .form label.label, .form input.text_field, .form textarea.text_area {
@@ -686,7 +686,7 @@ input.checkbox {
   border-left: 2px solid #ccc;
   width: 99%; }
 
-.form .navform {
+.navform {
   padding: 10px;
   background-color: #eee;
   font-size: 14px;
@@ -695,7 +695,7 @@ input.checkbox {
   border-top: 1px solid #eee;
   border-left: 1px solid #eee; }
 
-.form .navform input {
+.navform input {
   font-size: 14px; }
 
 .description {
@@ -753,7 +753,9 @@ form.formtastic fieldset > ol > li label {
   font-size: 1.2em; }
 
 form.formtastic fieldset > ol > li.string input,
-form.formtastic fieldset > ol > li.text textarea {
+form.formtastic fieldset > ol > li.text textarea,
+form.formtastic fieldset > ol > li.email input,
+form.formtastic fieldset > ol > li.password input {
   border-color: #cccccc #dddddd #dddddd #cccccc;
   border-right: 1px solid #dddddd;
   border-style: solid;
@@ -780,6 +782,17 @@ img.resource {
   display: block;
   margin: 15px auto; }
 
+form.formtastic.res_search fieldset.inputs {
+  float: left;
+  margin-right: 5%;
+  width: 45%; }
+form.formtastic.res_search fieldset.buttons {
+  padding-left: 0; }
+form.formtastic.res_search fieldset > ol > li label {
+  width: 5.4em; }
+form.formtastic.res_search fieldset legend {
+  display: none; }
+
 ul.gameList > li {
   height: 113px;
   padding: 5px; }
@@ -794,3 +807,11 @@ ul.gameList > li {
   height: 113px;
   margin: 5px;
   width: 150px; }
+
+.adminPanel .sectionTitle {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-bottom: 2px; }
+.adminPanel ul.section {
+  margin-left: 5px; }

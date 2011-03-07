@@ -1,0 +1,11 @@
+= main_box("Admin Panel", "adminPanel") do
+  .columns
+    .column.left
+      .sectionTitle Users
+      %ul.section
+        %li= link_to("Users", admin_users_path)
+    .column.right
+      .sectionTitle Complete Resources
+      %ul.section
+        %li= link_to("Categories", admin_categories_path)
+  .clear

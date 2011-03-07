@@ -1,0 +1,27 @@
+# Todo
+
+## Complete Resources
+
+ * Voting
+ * Popular Resources: Recent and high-rated
+ * Other filetypes: Midi
+ * Sub categories
+ * Admin edit / delete
+ * User edit delete
+ * Approval system using a group
+
+## Users
+
+ * Badges
+
+ 
+# Completed (Unpolished)
+
+## Complete Resources
+
+ * Category list on right side of page
+ * Filter by category search
+ 
+## Users
+
+ * Groups

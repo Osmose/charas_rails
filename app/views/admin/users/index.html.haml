@@ -1,0 +1,9 @@
+= main_box("Users") do
+    %table.table
+        %tr
+            %th Name
+            %th &nbsp;
+        = render :partial => "row", :collection => @users
+    .actions-bar.wat-cf
+        .pagination
+            = will_paginate @users
