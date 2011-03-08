@@ -79,6 +79,16 @@ class Resource < ActiveRecord::Base
         GROUP BY r.id
         ORDER BY rank DESC, r.created_at DESC
         LIMIT #{limit}")
+    when "PostgreSQL"
+      Resource.find_by_sql("
+        SELECT
+          r.*,
+          COUNT(f.id) / POW(EXTRACT(EPOCH FROM now - created_at) / 3600, 1.8) as rank
+        FROM resources AS r
+          LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
+        GROUP BY r.id
+        ORDER BY rank DESC, r.created_at DESC
+        LIMIT #{limit}")
     end
   end
 end
