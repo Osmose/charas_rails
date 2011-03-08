@@ -1,0 +1,29 @@
+- if @resource.nil?
+  = main_box("No Resources To Approve") do
+    %p There are no resources left in the approval queue.
+- else
+  = main_box("Approve " + @resource.name) do
+    .resource
+      = show_resource(@resource)
+    %ul.list.wat-cf
+      %li
+        .left.label Author
+        .item= @resource.user.name
+      %li
+        .left.label Category
+        .item= category_breadcrumb(@resource.category)
+      %li
+        .left.label Description
+        .item
+          :markdown
+            #{@resource.description}
+    .navform.wat-cf
+      = link_to(image_tag("icons/sm/tick.png") + " Approve", 
+          admin_resources_approve_path(@resource.id),
+          :method => :post,
+          :class => "button")
+      = link_to(image_tag("icons/sm/cross.png") + " Delete", 
+          admin_resources_delete_path(@resource.id),
+          :method => :delete,
+          :class => "button",
+          :confirm => "WARNING: This will delete the resource permanently. Are you sure?")

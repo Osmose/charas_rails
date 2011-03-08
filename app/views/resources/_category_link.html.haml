@@ -1,2 +1,7 @@
 %li
-  = link_to(category_link.name, resource_category_path(category_link.id))
+  - if category_link.is_parent?
+    .parent= category_link.name
+    %ul.sub.navigation
+      = render :partial => "category_link", :collection => category_link.children.sorted_alphabetically
+  - else
+    = link_to(category_link.name, resource_category_path(category_link.id))

@@ -1,18 +1,16 @@
 = main_box(@resource.name) do
   .resource
-    - if @resource.type == :image
-      = image_tag(@resource.res.url)
-    - elsif @resource.type == :audio
-      = link_to(@resource.res_file_name, @resource.res.url, :class => "embedMedia")
+    = show_resource(@resource)
   .navform.wat-cf
     = favorite_button(@resource)
+    = link_to(image_tag("icons/sm/disk.png") + " Download", @resource.res.url, :class => "button")
   %ul.list
     %li
       .left.label Author
       .item= @resource.user.name
     %li
       .left.label Category
-      .item= link_to(@resource.category.name, resource_category_path(@resource.category.id))
+      .item= category_breadcrumb(@resource.category)
     %li
       .left.label Favorites
       .item= @resource.fans.length
@@ -23,4 +21,10 @@
           #{@resource.description}
 
 = content_for :sidebar do
+  - if user_signed_in? && current_user.is_admin?
+    .block
+      %h3 Admin
+      %ul.navigation
+        %li= link_to("Edit this Resource", edit_resource_path(@resource))
+        %li= link_to("Delete this Resource", resource_path(@resource), :method => :delete, :confirm => "WARNING: This will delete the resource permanently. Are you sure?")
   = render "resources_sidebar"

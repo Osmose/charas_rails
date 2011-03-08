@@ -2,10 +2,7 @@
 
 ## Complete Resources
 
- * Sub categories
- * Admin edit / delete
- * User edit delete
- * Approval system using a group
+ * Sprite zoom
 
 ## Users
 
@@ -21,6 +18,10 @@
  * Voting
  * Popular Resources: Recent and high-rated
  * Other filetypes: Midi
+ * Download files (not ideal; may be changed on new host)
+ * Sub categories
+ * Admin edit / delete
+ * Approval system using a group
  
 ## Users
 

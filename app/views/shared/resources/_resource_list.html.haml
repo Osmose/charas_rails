@@ -1,7 +1,7 @@
 = main_box(title) do
   - if !resources.empty?
     %ul.resourceList
-      = render :partial => "res_list_item", :collection => resources
+      = render :partial => "shared/resources/res_list_item", :collection => resources
     .clear
     - if paginate
       = will_paginate resources

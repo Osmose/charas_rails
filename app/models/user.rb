@@ -18,22 +18,31 @@ class User < ActiveRecord::Base
   @@per_page = 10
 
   def is_admin?
-    groups.each do |g|
-      if g.is_admin_group?
-        return true
-      end
-    end
-
-    return false
+    in_group(Group::Admin_ID) || in_group(Group::Head_Admin_ID)
   end
 
   def is_head_admin?
+    in_group(Group::Head_Admin_ID)
+  end
+
+  def can_approve_resources?
+    is_admin? || in_group(Group::Resource_Approval_ID)
+  end
+
+  def can_see_admin_tab?
+    is_admin? || can_approve_resources?
+  end
+
+  protected
+
+  def in_group(id)
     groups.each do |g|
-      if g.is_head_admin_group?
+      if g.real_id == id
         return true
       end
     end
 
     return false
   end
+
 end

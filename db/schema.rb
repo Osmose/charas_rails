@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110307064107) do
+ActiveRecord::Schema.define(:version => 20110308201439) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "hidden"
+    t.integer  "parent_id"
   end
 
   create_table "game_meta_types", :force => true do |t|
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20110307064107) do
     t.text     "description"
     t.integer  "game_id"
     t.boolean  "hidden",           :default => false
+    t.boolean  "approved",         :default => false
   end
 
   create_table "users", :force => true do |t|

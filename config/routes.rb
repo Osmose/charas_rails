@@ -13,6 +13,11 @@ Charas::Application.routes.draw do
     root :to => "home#index"
     resources :categories
     resources :users
+
+    # Resource approval
+    match "resources/" => "resources#index", :as => :resources
+    match "resources/approve/:id" => "resources#approve", :via => :post, :as => :resources_approve
+    match "resources/delete/:id" => "resources#delete", :via => :delete, :as => :resources_delete
   end
 
   # Games

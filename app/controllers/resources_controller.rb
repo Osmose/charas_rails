@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show, :search, :download]
+  before_filter :check_admin, :only => [:edit, :update, :destroy]
   before_filter :build_sidebar_categories, :only => [:index, :show, :search, :category]
   before_filter :init_search_object, :only => [:index, :search]
   current_section :complete_resources
@@ -9,7 +10,7 @@ class ResourcesController < ApplicationController
   end
     
   def search
-    @resources = Resource.search_query(@search).paginate(
+    @resources = Resource.approved.search_query(@search).paginate(
       :page => params[:page],
       :order => "created_at DESC"
     )
@@ -19,7 +20,7 @@ class ResourcesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category
-      @resources = @category.resources.paginate(
+      @resources = @category.resources.approved.paginate(
         :page => params[:page],
         :order => "created_at DESC"
       )
@@ -28,6 +29,7 @@ class ResourcesController < ApplicationController
     end
   end
 
+  # Todo: Check if user is favoriting an unapproved resource
   def favorite
     ResourceFavorite.favorite_resource(current_user.id, params[:id])
 
@@ -43,19 +45,8 @@ class ResourcesController < ApplicationController
   def show
     @resource = Resource.find(params[:id])
         
-    if !@resource
+    if !@resource || !@resource.approved?
       redirect_to(resources_path, :error => "Resource not found")
-    end
-  end
-    
-  def download
-    # TODO: Check referer on download
-    @resource = Resource.find(params[:id])
-        
-    if @resource
-        
-    else
-        
     end
   end
     
@@ -72,7 +63,7 @@ class ResourcesController < ApplicationController
     @resource.user = current_user
 
     if @resource.save
-      redirect_to(@resource, :notice => 'Resource was successfully created.')
+      redirect_to(resources_path, :notice => 'Resource successfully submitted. It will appear in the Complete Resources after a staff member approves it.')
     else
       render :action => "new"
     end
@@ -92,7 +83,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
         
     @resource.destroy
-    redirect_to(posts_url, :notice => "Resource was deleted successfully")
+    redirect_to(resources_path, :notice => "Resource was deleted successfully")
   end
     
   def sub_layout
@@ -104,7 +95,7 @@ class ResourcesController < ApplicationController
   end
 
   def build_sidebar_categories
-    @sidebar_categories = Category.visible
+    @sidebar_categories = Category.visible.roots.sorted_alphabetically
   end
 
   def init_search_object

@@ -1,3 +1,4 @@
 %tr
     %td= row.name
+    %td= row.is_child? ? row.parent.name : ""
     %td #{link_to("edit", edit_admin_category_path(row))}

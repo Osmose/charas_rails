@@ -5,12 +5,19 @@ class Resource < ActiveRecord::Base
     "application/x-midi", "music/crescendo", "x-music/x-midi"]
   AllowedTypes = ImageTypes + AudioTypes
 
+  # Validations
+  validates :category, :inclusion => {:in => Category.leafs}
+
   belongs_to :user
   belongs_to :category
   belongs_to :game
 
   has_many :resource_favorites
   has_many :fans, :source => :user, :through => :resource_favorites
+
+  # Scopes
+  scope :approved, where(:approved => true)
+  scope :unapproved, where(:approved => false)
 
   # Paperclip
   has_attached_file :res, :styles => { :small => "100x100#" },
@@ -68,15 +75,15 @@ class Resource < ActiveRecord::Base
   end
 
   def self.find_by_rank(limit = 20)
-    
     case ActiveRecord::Base.connection.adapter_name
     when "MySQL"
       Resource.find_by_sql("
         SELECT
-          r.*
+          r.*,
           COUNT(f.id) / POWER((UNIX_TIMESTAMP(UTC_TIMESTAMP()) - UNIX_TIMESTAMP(r.created_at)) / 3600, 1.8) as rank
         FROM resources AS r
           LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
+        WHERE r.approved = true
         GROUP BY r.id
         ORDER BY rank DESC, r.created_at DESC
         LIMIT #{limit}")
@@ -88,6 +95,7 @@ class Resource < ActiveRecord::Base
           COUNT(f.id) / POW(EXTRACT(EPOCH FROM NOW() - r.created_at) / 3600, 1.8) as rank
         FROM resources AS r
           LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
+        WHERE r.approved = true
         GROUP BY #{rows}
         ORDER BY rank DESC, r.created_at DESC
         LIMIT #{limit}")

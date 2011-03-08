@@ -1,1 +1,1 @@
-%ul.wat-cf  = nav_tab("News", root_path, :news)  = nav_tab("Complete Resources", resources_path, :complete_resources)  = nav_tab("Games", games_path, :games)  - if user_signed_in? && current_user.is_admin?    = nav_tab("Admin", admin_root_path, :admin)
+%ul.wat-cf  = nav_tab("News", root_path, :news)  = nav_tab("Complete Resources", resources_path, :complete_resources)  = nav_tab("Games", games_path, :games)  - if user_signed_in? && current_user.can_see_admin_tab?    = nav_tab("Admin", admin_root_path, :admin)
