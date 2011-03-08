@@ -68,11 +68,12 @@ class Resource < ActiveRecord::Base
   end
 
   def self.find_by_rank(limit = 20)
+    
     case ActiveRecord::Base.connection.adapter_name
     when "MySQL"
       Resource.find_by_sql("
         SELECT
-          r.*,
+          r.*
           COUNT(f.id) / POWER((UNIX_TIMESTAMP(UTC_TIMESTAMP()) - UNIX_TIMESTAMP(r.created_at)) / 3600, 1.8) as rank
         FROM resources AS r
           LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
@@ -80,13 +81,14 @@ class Resource < ActiveRecord::Base
         ORDER BY rank DESC, r.created_at DESC
         LIMIT #{limit}")
     when "PostgreSQL"
+      rows = column_names.map {|f| "r.#{f}"}.join(",") + ","
       Resource.find_by_sql("
         SELECT
-          r.*,
+          #{rows}
           COUNT(f.id) / POW(EXTRACT(EPOCH FROM NOW() - r.created_at) / 3600, 1.8) as rank
         FROM resources AS r
           LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
-        GROUP BY r.id
+        GROUP BY #{rows}
         ORDER BY rank DESC, r.created_at DESC
         LIMIT #{limit}")
     end
