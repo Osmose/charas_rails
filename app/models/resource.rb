@@ -83,7 +83,7 @@ class Resource < ActiveRecord::Base
       Resource.find_by_sql("
         SELECT
           r.*,
-          COUNT(f.id) / POW(EXTRACT(EPOCH FROM now - created_at) / 3600, 1.8) as rank
+          COUNT(f.id) / POW(EXTRACT(EPOCH FROM NOW() - created_at) / 3600, 1.8) as rank
         FROM resources AS r
           LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
         GROUP BY r.id
