@@ -3,6 +3,7 @@
     %ul.resourceList
       = render :partial => "res_list_item", :collection => resources
     .clear
-    = will_paginate resources
+    - if paginate
+      = will_paginate resources
   - else
     %p No resources found.

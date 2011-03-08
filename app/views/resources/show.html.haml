@@ -1,5 +1,9 @@
 = main_box(@resource.name) do
-  = image_tag(@resource.res.url, :class => :resource)
+  .resource
+    - if @resource.type == :image
+      = image_tag(@resource.res.url)
+    - elsif @resource.type == :audio
+      = link_to(@resource.res_file_name, @resource.res.url, :class => "embedMedia")
   .navform.wat-cf
     = favorite_button(@resource)
   %ul.list
@@ -8,7 +12,10 @@
       .item= @resource.user.name
     %li
       .left.label Category
-      .item= @resource.category.name
+      .item= link_to(@resource.category.name, resource_category_path(@resource.category.id))
+    %li
+      .left.label Favorites
+      .item= @resource.fans.length
     %li
       .left.label Description
       .item

@@ -5,10 +5,7 @@ class ResourcesController < ApplicationController
   current_section :complete_resources
 
   def index
-    @resources = Resource.paginate(
-      :page => params[:page],
-      :order => "created_at DESC"
-    )
+    @popular_resources = Resource.find_by_rank
   end
     
   def search
@@ -77,7 +74,7 @@ class ResourcesController < ApplicationController
     if @resource.save
       redirect_to(@resource, :notice => 'Resource was successfully created.')
     else
-      redirect_to :back, :error => "Error saving resource."
+      render :action => "new"
     end
   end
     
@@ -87,7 +84,7 @@ class ResourcesController < ApplicationController
     if @resource.update_attributes(params[:resource])
       redirect_to(@resource, :notice => 'Resource was successfully updated.')
     else
-      render :action => "edit", :error => "Error editing resource"
+      render :action => "edit"
     end
   end
     
@@ -99,7 +96,7 @@ class ResourcesController < ApplicationController
   end
     
   def sub_layout
-    if action_name == "new" || action_name == "edit"
+    if ["new", "edit", "update", "create"].include?(action_name)
       "box"
     else
       "mainSidebar"

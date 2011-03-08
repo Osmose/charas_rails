@@ -1,7 +1,7 @@
 = main_box("Search") do
   = render "search_form"
 
-= resource_list("Search Results", @resources)
+= resource_list("Search Results", @resources, true)
 
 = content_for :sidebar do
   = render "resources_sidebar"

@@ -2,9 +2,6 @@
 
 ## Complete Resources
 
- * Voting
- * Popular Resources: Recent and high-rated
- * Other filetypes: Midi
  * Sub categories
  * Admin edit / delete
  * User edit delete
@@ -21,6 +18,9 @@
 
  * Category list on right side of page
  * Filter by category search
+ * Voting
+ * Popular Resources: Recent and high-rated
+ * Other filetypes: Midi
  
 ## Users
 

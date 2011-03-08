@@ -774,13 +774,18 @@ ul.resourceList li {
   border: 1px solid #bfbfbf;
   float: left;
   height: 100px;
+  line-height: 100px;
   margin: 5px;
   padding: 5px;
+  text-align: center;
   width: 100px; }
+  ul.resourceList li img {
+    vertical-align: middle; }
 
-img.resource {
-  display: block;
-  margin: 15px auto; }
+div.resource {
+  text-align: center; }
+  div.resource .embedMedia {
+    margin: 0 auto; }
 
 form.formtastic.res_search fieldset.inputs {
   float: left;

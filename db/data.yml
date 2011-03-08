@@ -1,0 +1,235 @@
+
+--- 
+categories: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  - hidden
+  records: 
+  - - 1
+    - Battlechara
+    - 2011-03-05 02:24:04.043330
+    - 2011-03-07 01:33:26.680582
+    - false
+  - - 2
+    - Screenshots
+    - 2011-03-06 18:15:21.702583
+    - 2011-03-06 18:15:21.702583
+    - true
+  - - 3
+    - Chipsets
+    - 2011-03-06 23:53:33.930789
+    - 2011-03-06 23:53:33.930789
+    - false
+
+--- 
+resources: 
+  columns: 
+  - id
+  - name
+  - category_id
+  - user_id
+  - created_at
+  - updated_at
+  - res_file_name
+  - res_content_type
+  - res_file_size
+  - res_updated_at
+  - description
+  - game_id
+  - hidden
+  records: 
+  - - 4
+    - Test 1
+    - 1
+    - 2
+    - 2011-03-05 06:19:24.033422
+    - 2011-03-05 06:19:24.033422
+    - MooseA.png
+    - image/png
+    - 8074
+    - 2011-03-05 06:19:23.869731
+    - This is a test description
+    - 
+    - false
+  - - 5
+    - Test 1
+    - 1
+    - 2
+    - 2011-03-05 06:19:55.558998
+    - 2011-03-05 06:19:55.558998
+    - MooseA.png
+    - image/png
+    - 8074
+    - 2011-03-05 06:19:55.398545
+    - This is a test description
+    - 
+    - false
+  - - 6
+    - Balrog Boom Box
+    - 3
+    - 2
+    - 2011-03-06 23:56:19.665941
+    - 2011-03-06 23:56:19.665941
+    - boomboxog.bmp
+    - image/bmp
+    - 7126
+    - 2011-03-06 23:56:19.020820
+    - Totally not a chipset lawl
+    - 
+    - false
+  - - 7
+    - Hi-res Quote
+    - 3
+    - 2
+    - 2011-03-07 02:18:49.508785
+    - 2011-03-07 02:18:49.508785
+    - quote.png
+    - image/png
+    - 40717
+    - 2011-03-07 02:18:49.249247
+    - A hi-res quote sprite
+    - 
+    - false
+  - - 8
+    - Moar Quote
+    - 1
+    - 2
+    - 2011-03-07 04:35:23.981332
+    - 2011-03-07 04:35:23.981332
+    - quote20sheetexp.png
+    - image/png
+    - 5257
+    - 2011-03-07 04:35:23.790675
+    - This is the real hires one
+    - 
+    - false
+
+--- 
+games: 
+  columns: 
+  - id
+  - name
+  - user_id
+  - created_at
+  - updated_at
+  - description
+  - logo_file_name
+  - logo_content_type
+  - logo_file_size
+  - logo_updated_at
+  records: 
+  - - 1
+    - Mooseworld Amazing
+    - 2
+    - 2011-03-06 00:01:04.738191
+    - 2011-03-06 01:13:11.158829
+    - |-
+      The most amazering game ever
+      
+       * Features!
+       * More features!
+    - mariohead.png
+    - image/png
+    - 8162
+    - 2011-03-06 01:13:10.933552
+  - - 2
+    - Mooseworld Amazing 2
+    - 2
+    - 2011-03-06 01:07:55.116323
+    - 2011-03-06 01:11:06.817844
+    - This time with more amazing!
+    - startropics_youvedoneit.png
+    - image/png
+    - 8798
+    - 2011-03-06 01:11:06.181849
+
+--- 
+users: 
+  columns: 
+  - id
+  - email
+  - encrypted_password
+  - password_salt
+  - reset_password_token
+  - remember_token
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - a@b.com
+    - $2a$10$O0qWjch5DVXd6eepItyIBeVVe7bVHj7sI/q0tCiGmUa958FSXRagq
+    - $2a$10$O0qWjch5DVXd6eepItyIBe
+    - 
+    - 
+    - 
+    - 1
+    - 2011-03-03 23:33:56.026568
+    - 2011-03-03 23:33:56.026568
+    - 10.0.2.2
+    - 10.0.2.2
+    - Test Account
+    - 2011-03-03 23:33:55.982455
+    - 2011-03-03 23:33:56.026914
+  - - 2
+    - admin@charas-project.net
+    - $2a$10$PeNXrx426XZubCz6pExh6OUsHFwqR/jqrj.H3myJcG5t81asBC4cm
+    - $2a$10$PeNXrx426XZubCz6pExh6O
+    - 
+    - S6UowRUQxfag45MJEShe
+    - 2011-03-06 22:36:57.115230
+    - 6
+    - 2011-03-07 16:45:10.465753
+    - 2011-03-06 22:36:57.128328
+    - 10.0.2.2
+    - 10.0.2.2
+    - Admin
+    - 2011-03-05 01:21:44.327616
+    - 2011-03-07 16:45:10.466210
+
+--- 
+groups: 
+  columns: 
+  - id
+  - name
+  - real_id
+  - description
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Head Administrators
+    - 1
+    - Developers or heads of the site.
+    - 2011-03-06 18:15:21.759147
+    - 2011-03-06 18:15:21.759147
+  - - 2
+    - Administrators
+    - 2
+    - Administrators for the entire site.
+    - 2011-03-06 18:15:21.779150
+    - 2011-03-06 18:15:21.779150
+
+--- 
+group_memberships: 
+  columns: 
+  - id
+  - user_id
+  - group_id
+  - created_at
+  - updated_at
+  records: 
+  - - 3
+    - 2
+    - 1
+    - 2011-03-06 23:34:01.584796
+    - 2011-03-06 23:34:01.584796
