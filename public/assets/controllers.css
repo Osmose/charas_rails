@@ -1,0 +1,52 @@
+.adminPanel .sectionTitle {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-bottom: 2px; }
+.adminPanel ul.section {
+  margin-left: 5px; }
+
+ul.gameList > li {
+  height: 113px;
+  padding: 5px; }
+  ul.gameList > li div.logo {
+    float: left;
+    margin-left: 5px; }
+  ul.gameList > li div.desc {
+    margin-left: 160px; }
+
+.gameInfo .logo {
+  float: right;
+  height: 113px;
+  margin: 5px;
+  width: 150px; }
+
+ul.resourceList li {
+  background-color: #eeeeee;
+  border: 1px solid #bfbfbf;
+  float: left;
+  height: 100px;
+  line-height: 100px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 100px; }
+  ul.resourceList li img {
+    vertical-align: middle; }
+
+div.resource {
+  padding: 5px;
+  text-align: center; }
+  div.resource .embedMedia {
+    margin: 0 auto; }
+
+form.formtastic.res_search fieldset.inputs {
+  float: left;
+  margin-right: 5%;
+  width: 45%; }
+form.formtastic.res_search fieldset.buttons {
+  padding-left: 0; }
+form.formtastic.res_search fieldset > ol > li label {
+  width: 5.4em; }
+form.formtastic.res_search fieldset legend {
+  display: none; }
