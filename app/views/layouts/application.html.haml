@@ -3,7 +3,7 @@
 %html
     %head
         %title Charas-Project
-        = stylesheet_link_tag :all
+        = include_stylesheets :reset, :theme, :theme_mods, :controllers
         = csrf_meta_tag
     %body
         #header
@@ -21,4 +21,4 @@
                 = render "layouts/navigation"
         #wrapper.wat-cf
             = render "layouts/#{controller.sub_layout}"
-        = javascript_include_tag :defaults
+        = include_javascripts :jquery, :jquery_ui, :jquery_plugins, :application

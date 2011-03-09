@@ -37,6 +37,7 @@ GEM
       xml-simple
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    closure-compiler (1.0.0)
     devise (1.1.7)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -51,6 +52,9 @@ GEM
     haml (3.0.25)
     hpricot (0.8.4)
     i18n (0.4.2)
+    jammit (0.6.0)
+      closure-compiler (>= 0.1.0)
+      yui-compressor (>= 0.9.1)
     json (1.5.1)
     mail (2.2.15)
       activesupport (>= 2.3.6)
@@ -95,6 +99,7 @@ GEM
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)
     xml-simple (1.0.14)
+    yui-compressor (0.9.4)
 
 PLATFORMS
   ruby
@@ -107,6 +112,7 @@ DEPENDENCIES
   formtastic
   haml
   hpricot
+  jammit
   paperclip (~> 2.3)
   rails (= 3.0.0)
   ruby-mysql

@@ -2,7 +2,7 @@
   - f.inputs "Basic" do
     = f.input :query
   - f.inputs "Advanced" do
-    = f.input :category_id, :as => :select, :collection => Category.visible
+    = f.input :category_id, :as => :select, :collection => Category.visible.leafs, :group_by => :parent, :group_association => :children
   .clear
   - f.buttons do
     = submit_button("#{image_tag("magnifier.png")} Search")

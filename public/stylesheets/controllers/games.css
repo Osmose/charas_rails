@@ -1,0 +1,14 @@
+ul.gameList > li {
+  height: 113px;
+  padding: 5px; }
+  ul.gameList > li div.logo {
+    float: left;
+    margin-left: 5px; }
+  ul.gameList > li div.desc {
+    margin-left: 160px; }
+
+.gameInfo .logo {
+  float: right;
+  height: 113px;
+  margin: 5px;
+  width: 150px; }

@@ -43,7 +43,7 @@ module ApplicationHelper
 
     def show_resource(resource)
       if resource.type == :image
-        image_tag(resource.res.url)
+        image_tag(resource.res.url, :class => "zoom")
       elsif resource.type == :audio
         link_to(resource.res_file_name, resource.res.url, :class => "embedMedia")
       end

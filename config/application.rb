@@ -42,14 +42,10 @@ module Charas
     Disqus::defaults[:account] = "mkelly01"
     Disqus::defaults[:container_id] = "disqus_thread"
     Disqus::defaults[:show_powered_by] = false 
-    
-    config.action_view.javascript_expansions[:defaults] = [
-        "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js",
-        "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js",
-        "jquery.media.js",
-        "rails.js"
-    ]
 
     config.autoload_paths += Dir["#{config.root}/app/models/**/"]
+
+    # Jammit
+    config.gem "jammit"
   end
 end

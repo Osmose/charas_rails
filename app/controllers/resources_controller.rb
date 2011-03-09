@@ -10,7 +10,7 @@ class ResourcesController < ApplicationController
   end
     
   def search
-    @resources = Resource.approved.search_query(@search).paginate(
+    @resources = Resource.search_query(@search).approved.paginate(
       :page => params[:page],
       :order => "created_at DESC"
     )

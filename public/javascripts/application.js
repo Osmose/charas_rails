@@ -6,5 +6,7 @@
       height: 100,
       caption: false
     });
+
+    $(".zoom").simpleZoom();
   });
 })(jQuery);

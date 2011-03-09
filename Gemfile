@@ -44,3 +44,5 @@ gem 'formtastic'
 gem "paperclip", "~> 2.3"
 gem "scoped_search"
 gem "aws-s3"
+
+gem "jammit"
