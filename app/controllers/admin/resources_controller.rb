@@ -10,7 +10,7 @@ class Admin::ResourcesController < ApplicationController
   def approve
     @resource = Resource.find(params[:id])
 
-    if @resource && @resource.update_attributes(:approved => true)
+    if @resource && @resource.approve!(current_user)
       redirect_to(admin_resources_path, :notice => "Resource was approved successfully.")
     else
       redirect_to(admin_resources_path, :notice => "Resource approval failed.")

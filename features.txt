@@ -2,12 +2,28 @@
 
 ## Complete Resources
 
- * Sprite zoom
-
 ## Users
 
- * Badges
+ * Avatars
+ * Profile Page
+   * Description, profile data
+   * See submitted resources
+   * See favorited resources
+   * See games
+   * See badges
+ 
+## Games
 
+ * Host game file
+ * Screenshots / videos
+ * News posts w/ comments
+ * Reviews
+ 
+## News
+
+ * Post to news
+ * Recent Resource uploads
+ * Promoted game updates
  
 # Completed (Unpolished)
 
@@ -22,7 +38,16 @@
  * Sub categories
  * Admin edit / delete
  * Approval system using a group
+ * Sprite zoom
  
 ## Users
 
  * Groups
+ * Badges
+ 
+## Games
+
+ * Remove metadata, add static metadata (engine)
+ 
+## NOTE
+ * SMF passwords = sha1(membername.downcase + password)

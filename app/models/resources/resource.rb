@@ -1,4 +1,6 @@
 class Resource < ActiveRecord::Base
+  include PaperClipHelper
+
   Gravity = 1.8 # Used in ranking
   ImageTypes = ["image/jpeg", "image/png", "image/gif"]
   AudioTypes = ["audio/midi", "audio/mid", "audio/x-mid", "audio/x-midi",
@@ -15,17 +17,15 @@ class Resource < ActiveRecord::Base
   has_many :resource_favorites
   has_many :fans, :source => :user, :through => :resource_favorites
 
+  # Approval
+  belongs_to :reviewer, :class_name => "User", :foreign_key => "approved_by"
+
   # Scopes
-  scope :approved, where(:approved => true)
-  scope :unapproved, where(:approved => false)
+  scope :approved, where("approved_by IS NOT NULL")
+  scope :unapproved, where("approved_by IS NULL")
 
-  # Paperclip
-  has_attached_file :res, :styles => { :small => "100x100#" },
-    :storage => :s3,
-    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-    :path => "/resources/:style/:id/:filename"
-
-  # Allowed content types
+  # The Resource file itself
+  has_attached_file_s3 :res, :styles => { :small => "100x100#" }
   validates_attachment_content_type :res, :content_type => AllowedTypes
     
   # Specify to not post-process non-image files
@@ -40,6 +40,15 @@ class Resource < ActiveRecord::Base
   # Pagination
   cattr_reader :per_page
   @@per_page = 20
+
+  # Approval
+  def approve!(user)
+    update_attributes(:reviewer => user)
+  end
+
+  def approved?
+    !reviewer.nil?
+  end
 
   # Determine type of this resource
   def type
@@ -64,6 +73,8 @@ class Resource < ActiveRecord::Base
     end
   end
 
+  # Static Methods
+
   def self.search_query(search)
     results = Resource.scoped
 
@@ -83,7 +94,7 @@ class Resource < ActiveRecord::Base
           COUNT(f.id) / POWER((UNIX_TIMESTAMP(UTC_TIMESTAMP()) - UNIX_TIMESTAMP(r.created_at)) / 3600, 1.8) as rank
         FROM resources AS r
           LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
-        WHERE r.approved = true
+        WHERE r.approved_by IS NOT NULL
         GROUP BY r.id
         ORDER BY rank DESC, r.created_at DESC
         LIMIT #{limit}")
@@ -95,7 +106,7 @@ class Resource < ActiveRecord::Base
           COUNT(f.id) / POW(EXTRACT(EPOCH FROM NOW() - r.created_at) / 3600, 1.8) as rank
         FROM resources AS r
           LEFT JOIN resource_favorites AS f ON r.id = f.resource_id
-        WHERE r.approved = true
+        WHERE r.approved_by IS NOT NULL
         GROUP BY #{rows}
         ORDER BY rank DESC, r.created_at DESC
         LIMIT #{limit}")

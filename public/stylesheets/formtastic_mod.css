@@ -1,0 +1,15 @@
+form.formtastic fieldset > ol > li label {
+  font-weight: bold;
+  font-size: 1.2em; }
+
+form.formtastic fieldset > ol > li.string input,
+form.formtastic fieldset > ol > li.text textarea,
+form.formtastic fieldset > ol > li.email input,
+form.formtastic fieldset > ol > li.password input,
+form.formtastic fieldset > ol > li.select select {
+  border-color: #cccccc #dddddd #dddddd #cccccc;
+  border-right: 1px solid #dddddd;
+  border-style: solid;
+  border-width: 2px 1px 1px 2px;
+  font-size: 1.2em;
+  padding: 1px 2px; }

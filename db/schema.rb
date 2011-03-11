@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308201439) do
+ActiveRecord::Schema.define(:version => 20110310213917) do
+
+  create_table "achievements", :force => true do |t|
+    t.string   "type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "achievements", ["type", "user_id"], :name => "index_achievements_on_type_and_user_id", :unique => true
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -18,21 +27,6 @@ ActiveRecord::Schema.define(:version => 20110308201439) do
     t.datetime "updated_at"
     t.boolean  "hidden"
     t.integer  "parent_id"
-  end
-
-  create_table "game_meta_types", :force => true do |t|
-    t.string   "name"
-    t.integer  "order"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "game_metas", :force => true do |t|
-    t.string   "value"
-    t.integer  "game_id"
-    t.integer  "game_meta_type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "games", :force => true do |t|
@@ -82,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20110308201439) do
     t.text     "description"
     t.integer  "game_id"
     t.boolean  "hidden",           :default => false
-    t.boolean  "approved",         :default => false
+    t.integer  "approved_by"
   end
 
   create_table "users", :force => true do |t|

@@ -1,0 +1,16 @@
+.userProfile .left {
+  float: left;
+  width: 150px; }
+  .userProfile .left .avatar {
+    margin: 5px auto 10px;
+    text-align: center; }
+.userProfile .right {
+  margin-left: 160px; }
+
+.badgeList .hoverText {
+  left: -65px; }
+.badgeList .badge {
+  float: left;
+  height: 32px;
+  margin: 5px;
+  width: 32px; }

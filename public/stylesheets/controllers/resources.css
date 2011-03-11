@@ -17,13 +17,5 @@ div.resource {
   div.resource .embedMedia {
     margin: 0 auto; }
 
-form.formtastic.res_search fieldset.inputs {
-  float: left;
-  margin-right: 5%;
-  width: 45%; }
-form.formtastic.res_search fieldset.buttons {
-  padding-left: 0; }
-form.formtastic.res_search fieldset > ol > li label {
-  width: 5.4em; }
-form.formtastic.res_search fieldset legend {
+form.formtastic.res_search legend {
   display: none; }

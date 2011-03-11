@@ -1,0 +1,15 @@
+= main_box(@user.name + "'s Profile", "userProfile") do
+  .left
+    .avatar
+      = image_tag("avatar.png")
+  .right
+    %ul.list
+      = list_item("Name", @user.name)
+  .clear
+
+= content_for :sidebar do
+  = sidebar_box("Badges", "badgeList") do
+    - if @user.achievements.size < 1
+      User has no badges.
+    - else
+      = show_badges(@user.achievements)

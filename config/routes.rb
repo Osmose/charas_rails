@@ -1,13 +1,22 @@
 Charas::Application.routes.draw do
+  root :to => "home#index"
+
+  # Login / Registration
   devise_for :users
-  
+
+  # User profiles
+  match "profile/:id" => "profiles#show", :as => :user_profile
+
   # Resources
   match "resources/search" => "resources#search", :as => :resource_search
   match "resources/favorite/:id" => "resources#favorite", :as => :resource_favorite
   match "resources/unfavorite/:id" => "resources#unfavorite", :as => :resource_unfavorite
   match "resources/category/:id" => "resources#category", :as => :resource_category
   resources :resources
-  
+
+  # Games
+  resources :games
+
   # Admin areas
   namespace "admin" do
     root :to => "home#index"
@@ -19,11 +28,6 @@ Charas::Application.routes.draw do
     match "resources/approve/:id" => "resources#approve", :via => :post, :as => :resources_approve
     match "resources/delete/:id" => "resources#delete", :via => :delete, :as => :resources_delete
   end
-
-  # Games
-  resources :games
-  
-  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

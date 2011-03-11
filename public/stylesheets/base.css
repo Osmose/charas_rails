@@ -61,12 +61,11 @@ body {
 #container {
   min-width: 960px; }
 
-#header, #wrapper {
-  padding: 0 20px; }
-
 #header {
+  margin: 0 auto;
   position: relative;
-  padding-top: 1px; }
+  padding-top: 1px;
+  width: 960px; }
 
 #header h1 {
   margin: 0;
@@ -75,10 +74,6 @@ body {
 
 #header h1 a:link, #header h1 a:active, #header h1 a:hover, #header h1 a:visited {
   text-decoration: none; }
-
-#main {
-  width: 70%;
-  float: left; }
 
 .actions-bar {
   padding: 10px 1px; }
@@ -89,10 +84,6 @@ body {
 .actions-bar .pagination {
   float: right;
   padding: 1px 0; }
-
-#sidebar {
-  width: 25%;
-  float: right; }
 
 #sidebar h3 {
   padding: 10px 15px;
@@ -114,7 +105,9 @@ body {
   padding: 10px; }
 
 #wrapper {
-  padding-top: 20px; }
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 960px; }
 
 #main .block {
   margin-bottom: 20px;
@@ -126,10 +119,10 @@ body {
 #main .main p.first {
   margin-top: 0; }
 
-#user-navigation {
+#user-navigation ul {
+  right: 0;
   position: absolute;
-  top: 0px;
-  right: 20px; }
+  top: 0; }
 
 #main-navigation {
   width: 100%; }
@@ -294,7 +287,7 @@ ul.list li .left .avatar {
   height: 50px; }
 
 ul.list li .item {
-  margin-left: 90px;
+  margin-left: 95px;
   padding: 5px; }
 
 ul.list li .item .avatar {

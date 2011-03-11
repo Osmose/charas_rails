@@ -47,5 +47,8 @@ module Charas
 
     # Jammit
     config.gem "jammit"
+
+    # Observers
+    config.active_record.observers = :resource_review_observer
   end
 end

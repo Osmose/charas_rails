@@ -8,6 +8,7 @@ javascripts:
   jquery_plugins:
     - public/javascripts/jquery.media.js
     - public/javascripts/jquery.simplezoom.js
+    - public/javascripts/jquery.hoverintent.js
 
   application:
     - public/javascripts/rails.js
@@ -18,11 +19,13 @@ stylesheets:
     - public/stylesheets/reset.css
 
   theme:
+    - public/stylesheets/960.css
     - public/stylesheets/base.css
     - public/stylesheets/warehouseTheme.css
+    - public/stylesheets/formtastic.css
 
   theme_mods:
-    - public/stylesheets/formtastic.css
+    - public/stylesheets/formtastic_mod.css
     - public/stylesheets/charas.css
 
   controllers:

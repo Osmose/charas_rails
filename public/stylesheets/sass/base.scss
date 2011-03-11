@@ -33,13 +33,11 @@ body {
   min-width: 960px;
 }
 
-#header, #wrapper {
-  padding: 0 20px;
-}
-
 #header {
+  margin: 0 auto;
   position: relative;
-  padding-top: 1px;  
+  padding-top: 1px;
+  width: 960px;
 }
 
 #header h1 {
@@ -52,11 +50,6 @@ body {
   text-decoration: none;
 }
 
-#main {  
-  width: 70%;
-  float: left;    
-}
-
 .actions-bar {
   padding: 10px 1px;
 }
@@ -65,15 +58,9 @@ body {
   float: left;
 }
 
-
 .actions-bar .pagination {
   float: right;
   padding: 1px 0;
-}
-
-#sidebar {
-  width: 25%;
-  float: right;      
 }
 
 #sidebar h3 {  
@@ -101,7 +88,9 @@ body {
 }
 
 #wrapper {
+  margin: 0 auto;
   padding-top: 20px;
+  width: 960px;
 }
 
 #main .block {
@@ -117,10 +106,10 @@ body {
   margin-top: 0;
 }
 
-#user-navigation {
+#user-navigation ul {
+  right: 0;
   position: absolute;
-  top: 0px;
-  right: 20px;  
+  top: 0;
 }
 
 #main-navigation {
@@ -333,7 +322,7 @@ ul.list li .left .avatar {
 }
 
 ul.list li .item {
-  margin-left: 90px;
+  margin-left: 95px;
   padding: 5px;
 }
 
