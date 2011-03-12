@@ -54,7 +54,7 @@ class GamesController < ApplicationController
   end
   
   def sub_layout
-    if action_name == "new" || action_name == "edit"
+    if ["new", "edit", "update", "create"].include?(action_name)
       "box"
     else
       "mainSidebar"

@@ -1,0 +1,21 @@
+= main_box("#{@game.name} Screenshots") do
+  - if !@screenshots.empty?
+    %ul.screenshotList= screenshot_list(@screenshots)
+    .clear
+    = will_paginate @screenshots
+  - else
+    %p No screenshots found.
+
+- if @game.isDeveloper?(current_user)
+  = main_box("Upload Screenshot") do
+    - semantic_form_for(@new_screenshot,
+                        :url => games_screenshots_create_path(@game),
+                        :method => :post,
+                        :html => {:multipart => true}) do |f|
+      - f.inputs do
+        = f.input :img, :name => "File"
+      - f.buttons do
+        = submit_button("#{image_tag("tick.png")} Submit")
+
+= content_for :sidebar do
+  = game_navigation(@game)

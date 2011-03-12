@@ -11,4 +11,16 @@ module ResourcesHelper
 
     link
   end
+
+  def resource_list(title, resources, paginate = false)
+    render :partial => "shared/resources/resource_list", :locals => {:title => title, :resources => resources, :paginate => paginate}
+  end
+
+  def show_resource(resource)
+    if resource.type == :image
+      image_tag(resource.res.url, :class => "zoom")
+    elsif resource.type == :audio
+      link_to(resource.res_file_name, resource.res.url, :class => "embedMedia")
+    end
+  end
 end

@@ -8,8 +8,7 @@
   .clear
 
 = content_for :sidebar do
-  - if @game.user == current_user
-    .block
-      %h3 Manage Game
-      %ul.navigation
-        %li= link_to("Edit Game Info", edit_game_path(@game))
+  = game_navigation(@game)
+  - if @game.isDeveloper?(current_user)
+    = sidebar_list("Manage Game") do
+      %li= link_to("Edit Game Info", edit_game_path(@game))

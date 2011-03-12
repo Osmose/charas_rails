@@ -3,7 +3,7 @@
     = show_resource(@resource)
   .navform.wat-cf
     = favorite_button(@resource)
-    = link_to(image_tag("icons/sm/disk.png") + " Download", @resource.res.url, :class => "button")
+    = button_link(image_tag("icons/sm/disk.png") + " Download", @resource.res.url)
   %ul.list
     = list_item("Author", @resource.user.name)
     = list_item("Category", category_breadcrumb(@resource.category))

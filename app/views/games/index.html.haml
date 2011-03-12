@@ -9,12 +9,5 @@
 
 = content_for :sidebar do
   - if user_signed_in?
-    - if current_user.is_admin?
-      .block
-        %h3 Admin Panel
-        %ul.navigation
-          %li= link_to("Manage Game Metadata", "#")
-    .block
-      %h3 My Games
-      %ul.navigation
-        %li= link_to("Create New Game", new_game_path)
+    = sidebar_list("My Games") do
+      %li= link_to("Create New Game", new_game_path)

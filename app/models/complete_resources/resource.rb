@@ -25,7 +25,9 @@ class Resource < ActiveRecord::Base
   scope :unapproved, where("approved_by IS NULL")
 
   # The Resource file itself
-  has_attached_file_s3 :res, :styles => { :small => "100x100#" }
+  has_attached_file_s3 :res, 
+    :styles => { :small => "100x100#" },
+    :path => "/resources/:style/:id/:filename"
   validates_attachment_content_type :res, :content_type => AllowedTypes
     
   # Specify to not post-process non-image files

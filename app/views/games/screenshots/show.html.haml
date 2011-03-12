@@ -1,0 +1,12 @@
+= main_box("#{@screenshot.game.name} Screenshot", "screenshots") do
+  .screenshot= image_tag(@screenshot.img.url)
+  .navform.wat-cf.columns
+    .column.left
+      - if @prev_screenshot
+        = button_link(image_tag("icons/sm/arrow_left.png") + " Previous", games_screenshots_show_path(@prev_screenshot))
+    .column.right
+      - if @next_screenshot
+        = button_link("Next " + image_tag("icons/sm/arrow_right.png"), games_screenshots_show_path(@next_screenshot))
+
+= content_for :sidebar do
+  = game_navigation(@screenshot.game)

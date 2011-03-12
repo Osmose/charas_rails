@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110310213917) do
+ActiveRecord::Schema.define(:version => 20110311181841) do
 
   create_table "achievements", :force => true do |t|
     t.string   "type"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(:version => 20110310213917) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "engine"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "group_memberships", :force => true do |t|
@@ -77,6 +82,16 @@ ActiveRecord::Schema.define(:version => 20110310213917) do
     t.integer  "game_id"
     t.boolean  "hidden",           :default => false
     t.integer  "approved_by"
+  end
+
+  create_table "screenshots", :force => true do |t|
+    t.integer  "game_id"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
