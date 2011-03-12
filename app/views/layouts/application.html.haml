@@ -24,6 +24,16 @@
           = render "layouts/navigation"
         .clear
     #wrapper.container_12
+      - if flash[:alert]
+        .flash.grid_12
+          .message.alert
+            %p= flash[:alert]
+        .clear
+      - if flash[:notice]
+        .flash.grid_12
+          .message.warning
+            %p= flash[:notice]
+        .clear
       = render "layouts/#{controller.sub_layout}"
     .clear
     = include_javascripts :jquery, :jquery_ui, :jquery_plugins, :application

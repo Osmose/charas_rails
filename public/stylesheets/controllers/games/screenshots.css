@@ -8,5 +8,5 @@ ul.screenshotList li {
 
 .screenshots .screenshot img {
   max-width: 590px; }
-.screenshots .navform .column.right a.button {
+.screenshots .navform a.button.right {
   float: right; }

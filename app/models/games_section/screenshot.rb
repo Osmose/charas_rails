@@ -2,6 +2,10 @@ class Screenshot < ActiveRecord::Base
   include PaperClipHelper
 
   belongs_to :game
+
+  # See game.rb for why this is silly
+  has_one :logo_game, :class_name => "Game"
+
   has_attached_file_s3 :img, 
     :styles => { :small => "150x113#" },
     :path => "/games/screenshots/:style/:id/:filename"

@@ -20,6 +20,7 @@ Charas::Application.routes.draw do
     # Screenshots
     match ":id/screenshots" => "screenshots#index", :as => :screenshots
     match "screenshots/:id" => "screenshots#show", :as => :screenshots_show
+    match "screenshots/:id/makelogo" => "screenshots#logo", :as => :screenshots_logo
     match ":id/screenshots/create" => "screenshots#create", :via => :post, :as => :screenshots_create
     match "screenshots/destroy/:id" => "screenshots#destroy", :via => :delete, :as => :screenshots_destroy
   end

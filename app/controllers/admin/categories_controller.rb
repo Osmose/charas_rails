@@ -24,7 +24,7 @@ class Admin::CategoriesController < ApplicationController
               format.xml  { render :xml => @category }
             end
         else
-            redirect_to(admin_categories_path, :error => "Category not found")
+            redirect_to(admin_categories_path, :alert => "Category not found")
         end
     end
     
@@ -42,7 +42,7 @@ class Admin::CategoriesController < ApplicationController
         if @category.save
             redirect_to(admin_categories_path, :notice => 'Category was successfully created.')
         else
-             render :action => "new", :error => "Error saving category."
+             render :action => "new", :alert => "Error saving category."
         end
     end
     
@@ -52,7 +52,7 @@ class Admin::CategoriesController < ApplicationController
         if @category.update_attributes(params[:category])
             redirect_to(admin_categories_path, :notice => 'Category was successfully updated.')
         else
-            render :action => "edit", :error => "Error editing category"
+            render :action => "edit", :alert => "Error editing category"
         end
     end
     

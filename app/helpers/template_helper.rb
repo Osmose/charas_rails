@@ -23,7 +23,7 @@ module TemplateHelper
     render(:partial => "shared/list_item", :locals => {:label => label, :item => (item or capture(&block))})
   end
 
-  def button_link(label, link)
-    link_to(label.html_safe, link, :class => "button")
+  def button_link(label, link, extra_class = "")
+    link_to(label.html_safe, link, :class => "button " + extra_class)
   end
 end

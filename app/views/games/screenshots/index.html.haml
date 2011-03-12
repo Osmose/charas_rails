@@ -6,7 +6,7 @@
   - else
     %p No screenshots found.
 
-- if @game.isDeveloper?(current_user)
+- if @game.is_developer?(current_user)
   = main_box("Upload Screenshot") do
     - semantic_form_for(@new_screenshot,
                         :url => games_screenshots_create_path(@game),

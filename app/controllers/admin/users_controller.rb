@@ -14,7 +14,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if !@user
-      redirect_to(admin_users_path, :error => "User not found")
+      redirect_to(admin_users_path, :alert => "User not found")
     end
   end
 

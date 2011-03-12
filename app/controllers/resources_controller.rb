@@ -25,7 +25,7 @@ class ResourcesController < ApplicationController
         :order => "created_at DESC"
       )
     else
-      redirect_to :back, :error => "Category not found"
+      redirect_to :back, :alert => "Category not found"
     end
   end
 
@@ -46,7 +46,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
         
     if !@resource || !@resource.approved?
-      redirect_to(resources_path, :error => "Resource not found")
+      redirect_to(resources_path, :alert => "Resource not found")
     end
   end
     

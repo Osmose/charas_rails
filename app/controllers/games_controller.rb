@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
       
     if !@game      
-      redirect_to(games_path, :error => "Game not found")
+      redirect_to(games_path, :alert => "Game not found")
     end
   end
   
@@ -32,7 +32,7 @@ class GamesController < ApplicationController
     if @game.save
       redirect_to(@game, :notice => 'Game was successfully created.')
     else
-      redirect_to :back, :error => "Error saving game."
+      redirect_to :back, :alert => "Error saving game."
     end
   end
   
@@ -42,7 +42,7 @@ class GamesController < ApplicationController
     if @game.update_attributes(params[:game])
       redirect_to(@game, :notice => 'Game was successfully updated.')
     else
-      render :action => "edit", :error => "Error editing game"
+      render :action => "edit", :alert => "Error editing game"
     end
   end
   
