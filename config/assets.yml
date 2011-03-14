@@ -20,9 +20,10 @@ stylesheets:
 
   theme:
     - public/stylesheets/960.css
-    - public/stylesheets/base.css
+    - public/stylesheets/baseTheme.css
     - public/stylesheets/warehouseTheme.css
     - public/stylesheets/formtastic.css
+    - public/stylesheets/footerStick.css
 
   theme_mods:
     - public/stylesheets/formtastic_mod.css

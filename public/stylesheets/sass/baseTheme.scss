@@ -87,19 +87,14 @@ body {
   padding:10px;
 }
 
-#wrapper {
-  margin: 0 auto;
-  padding-top: 20px;
-  width: 960px;
-}
-
 #main .block {
   margin-bottom: 20px;
   padding-top: 1px;
 }
 
 #main .block .content .inner {
-  padding: 0 15px 15px;  
+  padding-left:15px;
+  padding-right: 15px;
 }
 
 #main .main p.first {

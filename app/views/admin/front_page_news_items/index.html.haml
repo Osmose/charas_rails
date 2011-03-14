@@ -1,0 +1,13 @@
+= main_box("News") do
+  %table.table
+    %tr
+      %th Title
+      %th Author
+      %th Date
+      %th Actions
+    = render :partial => "row", :collection => @news_items
+  .actions-bar.wat-cf
+    .actions
+      = button_link(image_tag("add.png") + " New", new_admin_front_page_news_item_path)
+    .pagination
+      = will_paginate @news_items

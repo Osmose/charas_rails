@@ -1,0 +1,5 @@
+%tr
+  %td= link_to(row.title, [:admin, row])
+  %td= row.user.name
+  %td= format_time(row.created_at)
+  %td= action_links(row)

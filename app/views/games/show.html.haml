@@ -1,11 +1,8 @@
 = main_box(@game.name, "gameInfo") do
-  .logo= image_tag(@game.logo_url)
-  %ul.list
-    = list_item("Author", @game.user.name)
-    = list_item("Description") do
-      :markdown
-        #{@game.description}
-  .clear
+  = game_info(@game)
+  .gameDescription
+    :markdown
+      #{@game.description}
 
 = content_for :sidebar do
   = game_navigation(@game)

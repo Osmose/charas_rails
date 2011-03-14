@@ -1,8 +1,14 @@
+#bodyContainer {
+  padding-top: 20px; }
+
 .alignRight {
   text-align: right; }
 
 div.line {
   border-top: 1px solid #bfbfbf; }
+
+.block.noTitle .inner {
+  padding-top: 15px; }
 
 #sidebar div.parent {
   font-weight: bold;

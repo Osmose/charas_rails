@@ -1,0 +1,7 @@
+= main_box(nil) do
+  = news_item(@news_item)
+
+= content_for :sidebar do
+  = sidebar_list("Navigation") do
+    %li= link_to("Back to News List", admin_front_page_news_items_path)
+    %li= link_to("Edit this News Item", edit_admin_front_page_news_item_path(@news_item))

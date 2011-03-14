@@ -1,4 +1,5 @@
 .block{:class => bclass}
-    .content
-        %h2.title= title
-        .inner= content
+  .content
+    - if title
+      %h2.title= title
+    .inner= content

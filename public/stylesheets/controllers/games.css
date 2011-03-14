@@ -1,5 +1,4 @@
 ul.gameList > li {
-  height: 113px;
   padding: 5px; }
   ul.gameList > li div.logo {
     float: left;
@@ -8,7 +7,28 @@ ul.gameList > li {
     margin-left: 160px; }
 
 .gameInfo .logo {
-  float: right;
+  float: left;
   height: 113px;
-  margin: 5px;
   width: 150px; }
+.gameInfo ul.gameInfoList {
+  margin-left: 155px; }
+.gameInfo .gameDescription {
+  margin-top: 20px; }
+
+#sidebar .gameNavigation ul li.download a {
+  background-color: #eeeeee;
+  border: 1px solid #bfbfbf;
+  color: #333333;
+  display: block;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 5px 7px;
+  font-size: 1.2em;
+  margin: 10px auto;
+  text-align: center;
+  width: 150px; }
+  #sidebar .gameNavigation ul li.download a img {
+    vertical-align: middle; }
+  #sidebar .gameNavigation ul li.download a:hover {
+    background-color: #dedede;
+    text-decoration: none; }

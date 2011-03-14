@@ -4,36 +4,44 @@
   %head
     %title Charas-Project
     = include_stylesheets :reset, :theme, :theme_mods, :controllers
+    / Footer Stick IE fix
+    /[if !IE7]
+      :css
+        #wrapper {display:table;height:100%}
     = csrf_meta_tag
   %body#charas
-    #headerContainer
-      #header.container_12
-        .grid_4
-          .logo= image_tag("charas_head.png")
-          %h1= link_to("Charas-Project", root_path)
-        #user-navigation.grid_8
-          %ul.wat-cf
-            - if user_signed_in?
-              %li= link_to(current_user.name, user_profile_path(current_user))
-              %li= link_to("Logout", destroy_user_session_path)
-            - else
-              %li= link_to("Register", new_user_registration_path)
-              %li= link_to("Login", new_user_session_path)
-        .clear
-        #main-navigation.grid_12
-          = render "layouts/navigation"
-        .clear
-    #wrapper.container_12
-      - if flash[:alert]
-        .flash.grid_12
-          .message.alert
-            %p= flash[:alert]
-        .clear
-      - if flash[:notice]
-        .flash.grid_12
-          .message.warning
-            %p= flash[:notice]
-        .clear
-      = render "layouts/#{controller.sub_layout}"
-    .clear
+    #wrapper
+      #headerContainer
+        #header.container_12
+          .grid_4
+            .logo= image_tag("charas_head.png")
+            %h1= link_to("Charas-Project", root_path)
+          #user-navigation.grid_8
+            %ul.wat-cf
+              - if user_signed_in?
+                %li= link_to(current_user.name, user_profile_path(current_user))
+                %li= link_to("Logout", destroy_user_session_path)
+              - else
+                %li= link_to("Register", new_user_registration_path)
+                %li= link_to("Login", new_user_session_path)
+          .clear
+          #main-navigation.grid_12
+            = render "layouts/navigation"
+          .clear
+      #bodyContainer.container_12
+        - if flash[:alert]
+          .flash.grid_12
+            .message.error
+              %p= flash[:alert]
+          .clear
+        - if flash[:notice]
+          .flash.grid_12
+            .message.warning
+              %p= flash[:notice]
+          .clear
+        = render "layouts/#{controller.sub_layout}"
+      .clear
+    #footer
+      .block.container_12
+        %p.grid_12 Copyright &copy; 2002 - 2011 Charas-Project
     = include_javascripts :jquery, :jquery_ui, :jquery_plugins, :application

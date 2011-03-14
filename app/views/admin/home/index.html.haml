@@ -2,12 +2,13 @@
   .columns
     .column.left
       - if current_user.is_admin?
-        .sectionTitle Users
-        %ul.section
+        = admin_link_section("Users") do
           %li= link_to("Users", admin_users_path)
+      - if current_user.is_news_editor?
+        = admin_link_section("News") do
+          %li= link_to("Front Page News", admin_front_page_news_items_path)
     .column.right
-      .sectionTitle Complete Resources
-      %ul.section
+      = admin_link_section("Complete Resources") do
         - if current_user.can_approve_resources?
           %li= link_to("Approve Resources", admin_resources_path)
         - if current_user.is_admin?

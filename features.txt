@@ -4,7 +4,6 @@
 
 ## Users
 
- * Avatars
  * Profile Page
    * Description, profile data
    * See submitted resources
@@ -14,14 +13,11 @@
  
 ## Games
 
- * Host game file
- * Screenshots / videos
  * News posts w/ comments
  * Reviews
  
 ## News
 
- * Post to news
  * Recent Resource uploads
  * Promoted game updates
  
@@ -44,10 +40,17 @@
 
  * Groups
  * Badges
+ * Avatars
  
 ## Games
 
  * Remove metadata, add static metadata (engine)
+ * Screenshots
+ * Host game file
+ 
+## News
+  * Post to news
+  * Comments on news
  
 ## NOTE
  * SMF passwords = sha1(membername.downcase + password)

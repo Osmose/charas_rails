@@ -9,6 +9,16 @@ module FormHelper
     end
   end
 
+  def formtastic_li(label, id = nil, dclass = nil, &block)
+    render(:partial => "shared/formtastic_li", :locals => {
+        :label => label,
+        :li_id => id,
+        :li_class => dclass,
+        :label_for => nil,
+        :content => capture(&block)
+      })
+  end
+
   def form_grouped_select(object, method, collection, group_method,
       group_label_method, option_key_method, option_value_method,
       options = {}, html_options = {})

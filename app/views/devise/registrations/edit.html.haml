@@ -1,10 +1,15 @@
 = small_box("Edit #{resource_name.to_s.humanize}") do
-  - semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  - semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true, :method => :put }) do |f|
     = devise_error_messages!
-    - f.inputs do
+    - f.inputs "Basic" do
       = f.input :email
       = f.input :password, :hint => "(leave blank if you don't want to change it)"
       = f.input :password_confirmation
+    - f.inputs "Avatar" do
+      = formtastic_li("Current") do
+        = image_tag(resource.avatar_url)
+      = f.input :avatar, :label => "Upload New", :hint => "(avatars are resized to 50x50)"
+    - f.inputs "Confirm" do
       = f.input :current_password, :hint => "(enter current password to confirm changes)"
     - f.buttons do
       = submit_button("#{image_tag("tick.png")} Update")

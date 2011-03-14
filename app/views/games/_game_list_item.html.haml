@@ -1,10 +1,1 @@
-%li
-  .logo= link_to(image_tag(game_list_item.logo_url), game_list_item)
-  .desc
-    %ul.list
-      %li
-        .left.label Title
-        .item= link_to(game_list_item.name, game_list_item)
-      %li
-        .left.label Author
-        .item= game_list_item.user.name
+%li=game_info(game_list_item)

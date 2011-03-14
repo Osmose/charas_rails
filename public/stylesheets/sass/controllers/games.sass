@@ -1,5 +1,6 @@
+@import lib
+
 ul.gameList > li
-  height: 113px
   padding: 5px
 
   div.logo
@@ -11,7 +12,17 @@ ul.gameList > li
 
 .gameInfo
   .logo
-    float: right
+    float: left
     height: 113px
-    margin: 5px
     width: 150px
+  ul.gameInfoList
+    margin-left: 155px
+  .gameDescription
+    margin-top: 20px
+
+#sidebar .gameNavigation ul li.download a
+  +button
+  font-size: 1.2em
+  margin: 10px auto
+  text-align: center
+  width: 150px

@@ -1,0 +1,6 @@
+= semantic_form_for(new_comment, :url => new_news_comment_path, :method => :post) do |f|
+  - f.inputs do
+    = f.input :title
+    = f.input :content, :input_html => {:rows => 4}
+  - f.buttons do
+    = submit_button("#{image_tag("tick.png")} Submit")

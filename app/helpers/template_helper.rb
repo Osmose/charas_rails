@@ -3,16 +3,32 @@ module TemplateHelper
     render(:partial => "layouts/nav_tab", :locals => {:text => text, :path => path, :section => section})
   end
 
-  def main_box(title, bclass = false, &block)
+  def main_box(title = nil, bclass = "", &block)
+    if title.nil?
+      bclass = bclass + " noTitle"
+    end
     render(:partial => "shared/block", :locals => {:title => title, :bclass => bclass, :content => capture(&block)})
   end
 
-  def small_box(title, bclass = false, &block)
+  def small_box(title = "", bclass = false, &block)
+    if title.nil?
+      bclass = bclass + " noTitle"
+    end
     render(:partial => "shared/small_block", :locals => {:title => title, :bclass => bclass, :content => capture(&block)})
   end
 
-  def sidebar_box(title, bclass = false, &block)
+  def sidebar_box(title = "", bclass = false, &block)
+    if title.nil?
+      bclass = bclass + " noTitle"
+    end
     render(:partial => "shared/sidebar_block", :locals => {:title => title, :bclass => bclass, :content => capture(&block)})
+  end
+
+  def sidebar_block(title = "", bclass = false, &block)
+    if title.nil?
+      bclass = bclass + " noTitle"
+    end
+    render(:partial => "shared/sidebar_block_nobox", :locals => {:title => title, :bclass => bclass, :content => capture(&block)})
   end
 
   def sidebar_list(title, bclass = false, &block)

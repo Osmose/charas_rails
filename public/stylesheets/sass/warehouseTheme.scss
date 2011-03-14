@@ -49,11 +49,10 @@ input.checkbox {
   -moz-border-radius-topright: 4px;
   padding: 0;
   margin-bottom:20px;
-  padding-bottom: 20px;
   background: transparent;
 }
 
-#main .block .content {
+#main .block > .content {
   border-left: 1px solid #ddd;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ccc;

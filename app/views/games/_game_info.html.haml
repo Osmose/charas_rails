@@ -1,0 +1,7 @@
+.gameInfo
+  .logo= link_to(image_tag(game.logo_url), game)
+  %ul.list.gameInfoList
+    = list_item("Title", link_to(game.name, game))
+    = list_item("Author", link_to(game.user.name, user_profile_path(game.user)))
+    = list_item("Engine", (game.engine or "Unknown"))
+  .clear

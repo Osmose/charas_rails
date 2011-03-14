@@ -1,0 +1,8 @@
+.newsItem
+  .avatar= image_tag(news_item.user.avatar_url)
+  .body
+    %h2= link_to(news_item.title, news_path(news_item))
+    .content
+      :markdown
+        #{news_item.content}
+    .meta= item_meta_info(news_item)

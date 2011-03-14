@@ -1,3 +1,5 @@
-= sidebar_list("Navigation") do
+= sidebar_list("Navigation", "gameNavigation") do
   %li= link_to("Game Information", game)
   %li= link_to("Screenshots", games_screenshots_path(game))
+  - if game.file.file?
+    %li.download= link_to(image_tag("icons/med/box_down.png") + " Download Game", game.file.url)

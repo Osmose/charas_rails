@@ -2,16 +2,17 @@ class Game < ActiveRecord::Base
   include PaperClipHelper
 
   AllowedEngines = [
+    "Other",
     "RPG Maker 2000",
     "RPG Maker 2003",
     "RPG Maker XP",
     "RPG Maker VX",
     "Game Maker",
-    "Stencyl",
-    "Other"
+    "Stencyl"
   ]
-  
-  validates :engine, :inclusion => {:in => AllowedEngines}, :allow_nil => true
+
+  validates :name, :presence => true
+  validates :engine, :inclusion => {:in => AllowedEngines}
 
   belongs_to :user
 
@@ -23,10 +24,7 @@ class Game < ActiveRecord::Base
   belongs_to :screenshot
 
   has_many :resources
-  
-  has_attached_file_s3 :logo, 
-    :styles => { :small => "150x113#" },
-    :path => "/games/logos/:style/:id/:filename"
+  has_many :news_items
 
   has_attached_file_s3 :file,
     :path => "/games/files/:style/:id/:filename"

@@ -1,0 +1,6 @@
+= semantic_form_for([:admin, @news_item]) do |f|
+  - f.inputs do
+    = f.input :title, :hint => "(between 5 and 200 characters)"
+    = f.input :content, :input_html => {:rows => 5}
+  - f.buttons do
+    = submit_button("#{image_tag("tick.png")} Submit")

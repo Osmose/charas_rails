@@ -22,5 +22,10 @@ reviewers = Group.create :name => "Complete Resource Reviewers",
              :real_id => Group::Resource_Approval_ID,
              :description => "Users that can approve or delete resources submitted to the CR."
 
+# News Editors can post to the front-page news
+news_editors = Group.create :name => "News Editors",
+             :real_id => Group::News_Editor_ID,
+             :description => "Users that can post news stories to the front page."
+
 u = User.create(:name => "Admin", :email => "a@b.com", :password => "asdfdf", :password_confirmation => "asdfdf")
 u.groups << head_admins

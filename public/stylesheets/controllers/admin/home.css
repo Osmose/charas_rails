@@ -1,7 +1,9 @@
-.adminPanel .sectionTitle {
-  display: block;
-  font-size: 1.2em;
-  font-weight: bold;
-  padding-bottom: 2px; }
-.adminPanel ul.section {
-  margin-left: 5px; }
+.adminPanel .adminLinkSection {
+  padding-bottom: 10px; }
+  .adminPanel .adminLinkSection .sectionTitle {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-bottom: 2px; }
+  .adminPanel .adminLinkSection ul.section {
+    margin-left: 5px; }

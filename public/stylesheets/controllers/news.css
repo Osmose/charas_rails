@@ -1,0 +1,10 @@
+.newsItem, .comment {
+  padding-bottom: 25px; }
+  .newsItem .avatar, .comment .avatar {
+    float: left;
+    margin: 0 10px 0 0;
+    width: 50px; }
+  .newsItem .body, .comment .body {
+    margin-left: 60px; }
+  .newsItem .meta, .comment .meta {
+    color: #9f9f9f; }

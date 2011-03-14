@@ -1,0 +1,10 @@
+= main_box(nil) do
+  = news_item(@news_item)
+
+= main_box(nil) do
+  - if user_signed_in?
+    %h2 New Comment
+    = comment_form(@new_comment)
+  %h2 Comments
+  .comments
+    = show_comments(@comments)

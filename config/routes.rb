@@ -1,5 +1,12 @@
 Charas::Application.routes.draw do
-  root :to => "home#index"
+  root :to => "news#index"
+
+  # Front page news
+  match "news" => "news#index", :as => :news
+  match "news/:id" => "news#show", :as => :news
+  match "news/:id/new_comment" => "news#new_comment", :via => :post, :as => :new_news_comment
+  match "news/comment/:id/update" => "news#update_comment", :via => :post, :as => :edit_news_comment
+  match "news/comment/:id/destroy" => "news#destroy_comment", :via => :delete, :as => :news_comment_destroy
 
   # Login / Registration
   devise_for :users
@@ -30,6 +37,7 @@ Charas::Application.routes.draw do
     root :to => "home#index"
     resources :categories
     resources :users
+    resources :front_page_news_items
 
     # Resource approval
     match "resources/" => "resources#index", :as => :resources

@@ -1,0 +1,8 @@
+.comment
+  .avatar= image_tag(comment.user.avatar_url)
+  .body
+    %h3.title= comment.title
+    .content
+      :markdown
+        #{comment.content}
+    .meta= item_meta_info(comment)
